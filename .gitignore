@@ -13,3 +13,15 @@ results
 
 node_modules
 npm-debug.log
+
+public/html/*
+public/js/*
+public/css/*
+
+!public/html/tests.html
+!public/js/tests.js
+!public/css/tests.css
+
+!public/html/car.html
+!public/js/car.js
+!public/css/car.css

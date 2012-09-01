@@ -1,0 +1,38 @@
+define(['cssom'], function (cssom) {
+	var Style = (function () {
+		
+		function Style(config) {
+			this.id = config.id;
+			var text = config.text? config.text: "";
+			this.__cssom = cssom.parse(text);
+		};
+
+		Style.prototype.getRule = function (name) {
+			var rules = this.__cssom.cssRules;
+			for (var i = 0; i<rules.length; i++)
+				if (rules[i].selectorText = name)
+					return rules.style;
+			return undefined;
+		};
+
+		Style.prototype.insertRule = function (name) {
+			// make sure no 2 rules with the same name exist.
+			var rule = this.getRule(name);
+			if (rule)
+				return rule;
+
+			// insert an empty rule with given name
+			var emptyRule = name + " {}";
+			this.__cssom.insertRule(emptyRule);
+			return this.getRule(name);
+		};
+							
+		Style.prototype.toString = function () {
+			return this.__cssom.toString();
+		};
+
+		return Style;
+	})();
+
+	return Style;
+});

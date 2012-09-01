@@ -1,0 +1,32 @@
+{
+    "name": "SynerJ",
+    "version": "0.1.0",
+    "description": "Live Interactive web app IDE",
+    "keywords": [
+      "SynerJ"
+    ],
+    "maintainers": [{
+      "name": "Tim Coppieters",
+      "email": "coppieters.tim@gmail.com"
+    }],
+    "contributors": [],
+    "bugs": {
+        "email": "coppieters.tim@gmail.com"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://github.com/tmpvar/jsdom/blob/master/LICENSE.txt"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": ""
+        }
+    ],
+    "dependencies": {
+       "jsdom"      : "0.2.x"
+    },
+    "engines" : { "node" : ">=0.1.9" }
+}

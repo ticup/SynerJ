@@ -1,0 +1,2 @@
+#!/bin/bash
+nodemon /usr/local/bin/mocha --reporter spec

@@ -1,0 +1,30 @@
+1. Change DOM attribute type
+2. Display DOM attribute type in Tree Inspector
+3. Interface to execute a method/trigger an event.
+4. Inspector: select multiple => delete multiple
+5. undo/redo
+6. Sort out 'undefined'/undefined.
+7. Save/Restore image
+8. Authentication
+9. ugh, Security.
+=> see lib/env/SynerJ.core.js
+=> see lib/env/Dobject.js: make sure the proxy only intercepts function from the prototype
+and no properties such as prototype,constructor...
+
+10. Arrays: special Dobjects?
+11. Separate object/dobject?
+12. SANDBOX!!!
+13. Cloning objects
+14. Evaluator for given object (this pointing to the object)
+15. write real tests
+16. sync on server-side: wait until all clients have received the message to go on.
+17. use ACE to its fullest: VIM/Textmate possibilities.
+18. Provide on-the-fly loadable data -> queryable. CouchDB?
+
+19. InstanceOf? -> check if that object is in the prototype chain??
+
+1. Admin files bug: 2 pages open, 1 authed, 1 not authed => both auth access,
+=> see lib/server/scripts.js
+2. Using setTimeout in a function and throwing an error in that timeout crashes the server of not catched.
+3. text attribute: delete/empty
+

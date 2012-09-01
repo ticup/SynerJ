@@ -1,0 +1,26 @@
+# SynerJ 
+# Tim Coppieters 2011
+#
+# SCRIPTS #
+# for AMD module loading at the client side I use requireJS.
+# This requires some work for libraries to work with the system.
+# jQuery: simply load the environment and return the $
+# jQuery-UI: There is a special jQuery-UI converter to work with AMD modules
+#  --> https://github.com/jrburke/jqueryui-amd
+# If you wish to use an new version of jQuery-UI: install it over libs/jquery-ui
+# and run next command from within ./scripts/
+#  >  node libs/jqueryui-amd/example/r.js libs/jqueryui-amd/convert.js libs/jquery-ui/development-bundle/ libs/jquery-ui/jquery-ui-require
+#
+#
+#  JSTREE
+#  I hacked the jstree library by adding an additional parameter to the move_node and rename_node
+#  functions that determines whether the moving was done by a user taking a node and moving it
+#  (or by entering a new name) or if it was done simply by programmatically executing 
+#  the move_node/create_node function on the tree.
+#
+#  We needed to be able to distinguish these 2 type of actions, because otherwise there is an
+#  endless loop of the client instucting the server to change name, then again the client and
+#  then again the server and so on.
+#
+#  SlickGrid
+#  SlickGrid is used for the Editor part.
