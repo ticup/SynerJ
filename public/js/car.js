@@ -1,0 +1,27 @@
+require(['SynerJ'], function (SynerJ) {
+SynerJ('start')._bind('click', 'function (event) {\n    SynerJ(\'car\').ignite();\n}');
+SynerJ('stop')._bind('click', 'function (event) {\n    SynerJ(\'car\').stop();\n}');
+SynerJ('go-to')._bind('click', 'function onClick (event) {\n    var x = SynerJ(\'x-input\').val();\n    var y = SynerJ(\'y-input\').val();\n    SynerJ(\'car\').drive(x, y);\n}');
+SynerJ('car')._setProp('prototype', 'object:carProto');
+SynerJ('car')._setProp('sirene', 'object:sirene');
+SynerJ('car')._setProp('ignite', 'function alarm() {\n    var sirene = this.sirene;\n    var car = this;\n    var step = this.step;\n    \n    this.running = true;\n    \n    function up() {\n        sirene.setCss(\'background-color\', \'green\');\n        if (car.running) {\n            var xDist = car.xDist;\n            var yDist = car.yDist;\n            if (car.xDist) {\n                if (Math.abs(xDist) < step) {\n                    return car.xDist = false;\n                }\n                var dst = (xDist > 0) ? step : - step;\n                car.horizontal();\n                car.setCss(\'left\', parseInt(car.getCss(\'left\')) + dst + "px");\n                car.xDist = car.xDist - dst;  \n            } else if (car.yDist) {\n                if (Math.abs(yDist) < step) {\n                    alert(\'Your car has arrived!\');\n                    return car.yDist = false;\n                }\n                var dst = (yDist > 0) ? step : - step;\n                car.vertical();\n                car.setCss(\'top\', parseInt(car.getCss(\'top\')) + dst + "px");\n                car.yDist = car.yDist - dst;  \n            }\n            setTimeout(down, 100);\n        }\n    }\n    function down() {\n        sirene.setCss(\'background-color\', \'red\');\n        setTimeout(up, 100);\n    }\n    up();   \n}');
+SynerJ('car')._setProp('stop', 'function stop() {\n    this.running = false;\n}');
+SynerJ('car')._setProp('horizontal', 'function horizontal() {\n    if (this.position != "horizontal") {\n        this.turn();\n        this.position = "horizontal";\n    }\n}');
+SynerJ('car')._setProp('position', 'vertical');
+SynerJ('car')._setProp('vertical', 'function vertical() {\n    if (this.position != "vertical") {\n        this.turn();\n        this.position = "vertical";\n    }\n}');
+SynerJ('car')._setProp('turn', 'function turn() {\n    function swapCss(obj, a, b) {\n        var c = obj.getCss(a);\n        obj.setCss(a, obj.getCss(b));\n        obj.setCss(b, c);\n    }\n    \n    var children = this.children();\n    for (var i in children) {\n        swapCss(children[i], "top", "left");\n    }\n    swapCss(this, "width", "height");\n    \n    console.log(\'turning\');  \n}');
+SynerJ('car')._setProp('xDist', 0);
+SynerJ('car')._setProp('yDist', 0);
+SynerJ('car')._setProp('running', false);
+SynerJ('car')._setProp('step', 10);
+SynerJ('car')._setProp('drive', 'function goto(x, y) {\n    this.xDist = x;\n    this.yDist = y;\n}');
+SynerJ('wheel1')._setProp('prototype', 'object:wheelProto');
+SynerJ('wheel2')._setProp('prototype', 'object:wheelProto');
+SynerJ('wheel3')._setProp('prototype', 'object:wheelProto');
+SynerJ('wheel4')._setProp('prototype', 'object:wheelProto');
+SynerJ('x-input')._setProp('prototype', undefined);
+SynerJ('wheelProto')._setProp('prototype', undefined);
+SynerJ('carProto')._setProp('prototype', 'object:red');
+SynerJ('red')._setProp('prototype', undefined);
+SynerJ('green')._setProp('prototype', undefined);
+});

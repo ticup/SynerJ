@@ -1,0 +1,1182 @@
+<html>  <head>    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" />
+    <link rel="stylesheet" type="text/css" href="public/css/default.css" />
+    <script data-main="client/main" src="public/libs/require.js"></script>
+    <title>tests</title>
+    <link rel="stylesheet" type="text/css" href="public/css/tests.css" />
+</head>
+  <body>    <div id="SynerJ-Objects">      <div id="visual-objects">        <ul id="list">          <li id="Test1Li" class="liProto">            <button id="Test1Button" class="startProto">Object: Property Name Tests</button>
+            <p id="Test1Output" class="succeedProto">status: Succeeded</p>
+            <ul id="Test1Sublist" class="SubTestProto">              <li id="Test1-newSubTest" class="SubTestNew">                <input id="Test1-newInput" class="SubTestNewInputProto" value="" />
+                <button id="Test1-newButton" class="SubTestNewButtonProto">Create New SubTest</button>
+</li>
+              <li id="Test1-0Li" class="SubTestLiProto">                <p id="Test1-0Tag" class="SubTestTagProto">Test 1-0: Set/get property 'foo' should return given value.</p>
+                <p id="Test1-0Output" class="succeedProto">status: Succeeded</p>
+</li>
+              <li id="Test1-1Li" class="SubTestLiProto">                <p id="Test1-1Tag" class="SubTestTagProto">Test 1-1: dobject</p>
+                <p id="Test1-1Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test1-2Li" class="SubTestLiProto">                <p id="Test1-2Tag" class="SubTestTagProto">Set/get property 'foo bar' should throw error.</p>
+                <p id="Test1-2Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test1-3Li" class="SubTestLiProto">                <p id="Test1-3Tag" class="SubTestTagProto">Test 1-3: Set/get property 'foo-bar' should return given value.</p>
+                <p id="Test1-3Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test1-4Li" class="SubTestLiProto">                <p id="Test1-4Tag" class="SubTestTagProto">Test 1-4: Get property 'foo bar' should throw error.</p>
+                <p id="Test1-4Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test1-5Li" class="SubTestLiProto">                <p id="Test1-5Tag" class="SubTestTagProto">Test 1-5: Test 1-5: Set/get property 'foo_bar' should return given value.</p>
+                <p id="Test1-5Output" class="waitingProto">status: none</p>
+</li>
+</ul>
+</li>
+          <li id="Test2Li" class="liProto">            <button id="Test2Button" class="startProto">Dobject: Property Name Tests</button>
+            <p id="Test2Output" class="waitingProto">status: none</p>
+            <ul id="Test2Sublist" class="SubTestProto">              <li id="Test2-newSubTest" class="SubTestNewProto">                <input id="Test2-newInput" class="SubTestNewInputProto" value="" />
+                <button id="Test2-newButton" class="SubTestNewButtonProto">Create New SubTest</button>
+</li>
+              <li id="Test2-0Li" class="SubTestLiProto">                <p id="Test2-0Tag" class="SubTestTagProto">Test 2-0: Set/get property 'foo' should return given value.</p>
+                <p id="Test2-0Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test2-1Li" class="SubTestLiProto">                <p id="Test2-1Tag" class="SubTestTagProto">Test 2-1: Set/get property 'FooBar' should return given value.</p>
+                <p id="Test2-1Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test2-2Li" class="SubTestLiProto">                <p id="Test2-2Tag" class="SubTestTagProto">Test 2-2: Set/get property 'foo bar' should throw error.</p>
+                <p id="Test2-2Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test2-3Li" class="SubTestLiProto">                <p id="Test2-3Tag" class="SubTestTagProto">Test 2-3: Set/get property 'foo-bar' should return given value.</p>
+                <p id="Test2-3Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test2-4Li" class="SubTestLiProto">                <p id="Test2-4Tag" class="SubTestTagProto">Test 2-4: Get property 'foo bar' should throw error.</p>
+                <p id="Test2-4Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test2-5Li" class="SubTestLiProto">                <p id="Test2-5Tag" class="SubTestTagProto">Test 2-5: Set/get property 'foo_bar' should return given value.</p>
+                <p id="Test2-5Output" class="waitingProto">status: none</p>
+</li>
+</ul>
+</li>
+          <li id="Test3Li" class="liProto">            <button id="Test3Button" class="startProto">Object: Id Name Tests</button>
+            <p id="Test3Output" class="waitingProto">status: none</p>
+            <ul id="Test3Sublist" class="SubTestProto">              <li id="Test3-newSubTest" class="SubTestNewProto">                <input id="Test3-newInput" class="SubTestNewInputProto" value="" />
+                <button id="Test3-newButton" class="SubTestNewButtonProto">Create New SubTest</button>
+</li>
+              <li id="Test3-0Li" class="SubTestLiProto">                <p id="Test3-0Tag" class="SubTestTagProto">Test 3-0: Make object with id 'foo'.</p>
+                <p id="Test3-0Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test3-1Li" class="SubTestLiProto">                <p id="Test3-1Tag" class="SubTestTagProto">Test 3-1: Make object with id 'FooBar'.</p>
+                <p id="Test3-1Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test3-2Li" class="SubTestLiProto">                <p id="Test3-2Tag" class="SubTestTagProto">Test 3-2: Make object with id 'foo-2'.</p>
+                <p id="Test3-2Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test3-3Li" class="SubTestLiProto">                <p id="Test3-3Tag" class="SubTestTagProto">Test 3-3: Make object with id 'foo_2'.</p>
+                <p id="Test3-3Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test3-4Li" class="SubTestLiProto">                <p id="Test3-4Tag" class="SubTestTagProto">Test 3-4: Making 2 objects with id 'foo' should result in an error.</p>
+                <p id="Test3-4Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test3-5Li" class="SubTestLiProto">                <p id="Test3-5Tag" class="SubTestTagProto">Test 3-5: Making an object with id 'foo bar' should result in an error.</p>
+                <p id="Test3-5Output" class="waitingProto">status: none</p>
+</li>
+</ul>
+</li>
+          <li id="Test4Li" class="liProto">            <button id="Test4Button" class="startProto">Dobject: Id Name Tests</button>
+            <p id="Test4Output" class="waitingProto">status: none</p>
+            <ul id="Test4Sublist" class="SubTestProto">              <li id="Test4-newSubTest" class="SubTestNewProto">                <input id="Test4-newInput" class="SubTestNewInputProto" value="" />
+                <button id="Test4-newButton" class="SubTestNewButtonProto">Create New SubTest</button>
+</li>
+              <li id="Test4-0Li" class="SubTestLiProto">                <p id="Test4-0Tag" class="SubTestTagProto">Test 4-0: Make object with id 'foo'.</p>
+                <p id="Test4-0Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test4-1Li" class="SubTestLiProto">                <p id="Test4-1Tag" class="SubTestTagProto">Test 4-1: Make object with id 'FooBar'.</p>
+                <p id="Test4-1Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test4-2Li" class="SubTestLiProto">                <p id="Test4-2Tag" class="SubTestTagProto">Test 4-2: Make object with id 'foo-2'.</p>
+                <p id="Test4-2Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test4-3Li" class="SubTestLiProto">                <p id="Test4-3Tag" class="SubTestTagProto">Test 4-3: Make object with id 'foo_2'.</p>
+                <p id="Test4-3Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test4-4Li" class="SubTestLiProto">                <p id="Test4-4Tag" class="SubTestTagProto">Test 4-4: Making 2 objects with id 'foo' should result in an error.</p>
+                <p id="Test4-4Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test4-5Li" class="SubTestLiProto">                <p id="Test4-5Tag" class="SubTestTagProto">Test 4-5: Making an object with id 'foo bar' should result in an error.</p>
+                <p id="Test4-5Output" class="waitingProto">status: none</p>
+</li>
+</ul>
+</li>
+          <li id="Test5Li" class="liProto">            <button id="Test5Button" class="startProto">Property Value Tests</button>
+            <p id="Test5Output" class="waitingProto">status: none</p>
+            <ul id="Test5Sublist" class="SubTestProto">              <li id="Test5-newSubTest" class="SubTestNewProto">                <input id="Test5-newInput" class="SubTestNewInputProto" value="Objects: object reference should be undefined when the object is deleted." />
+                <button id="Test5-newButton" class="SubTestNewButtonProto">Create New SubTest</button>
+</li>
+              <li id="Test5-0Li" class="SubTestLiProto">                <p id="Test5-0Tag" class="SubTestTagProto">Test 5-0: Strings</p>
+                <p id="Test5-0Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test5-1Li" class="SubTestLiProto">                <p id="Test5-1Tag" class="SubTestTagProto">Test 5-1: Numbers</p>
+                <p id="Test5-1Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test5-2Li" class="SubTestLiProto">                <p id="Test5-2Tag" class="SubTestTagProto">Test 5-2: Booleans</p>
+                <p id="Test5-2Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test5-3Li" class="SubTestLiProto">                <p id="Test5-3Tag" class="SubTestTagProto">Test 5-3: Objects</p>
+                <p id="Test5-3Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test5-4Li" class="SubTestLiProto">                <p id="Test5-4Tag" class="SubTestTagProto">Test 5-4: Arrays</p>
+                <p id="Test5-4Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test5-5Li" class="SubTestLiProto">                <p id="Test5-5Tag" class="SubTestTagProto">Test 5-5: Objects: refer to correct object when referred object its id is changed.</p>
+                <p id="Test5-5Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test5-6Li" class="SubTestLiProto">                <p id="Test5-6Tag" class="SubTestTagProto">Test 5-6: Objects: object reference should be undefined when the object is deleted.</p>
+                <p id="Test5-6Output" class="waitingProto">status: none</p>
+</li>
+</ul>
+</li>
+          <li id="Test6Li" class="liProto">            <button id="Test6Button" class="startProto">Prototype Tests: Properties</button>
+            <p id="Test6Output" class="waitingProto">status: none</p>
+            <ul id="Test6Sublist" class="SubTestProto">              <li id="Test6-newSubTest" class="SubTestNewProto">                <input id="Test6-newInput" class="SubTestNewInputProto" value="Trigger error when trying to make cyclic prototype chain II." />
+                <button id="Test6-newButton" class="SubTestNewButtonProto">Create New SubTest</button>
+</li>
+              <li id="Test6-0Li" class="SubTestLiProto">                <p id="Test6-0Tag" class="SubTestTagProto">Test 6-0: Inherit property from parent, if not overridden.</p>
+                <p id="Test6-0Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test6-1Li" class="SubTestLiProto">                <p id="Test6-1Tag" class="SubTestTagProto">Test 6-1: Inherit property from indirect parent, if not overridden.</p>
+                <p id="Test6-1Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test6-2Li" class="SubTestLiProto">                <p id="Test6-2Tag" class="SubTestTagProto">Test 6-2: Override inherited property, retrieve, overwrite and retrieve again.</p>
+                <p id="Test6-2Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test6-3Li" class="SubTestLiProto">                <p id="Test6-3Tag" class="SubTestTagProto">Test 6-3: Setting a cyclic prototype chain should throw an error I.</p>
+                <p id="Test6-3Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test6-4Li" class="SubTestLiProto">                <p id="Test6-4Tag" class="SubTestTagProto">Test 6-4: Setting a cyclic prototype chain should throw an error II</p>
+                <p id="Test6-4Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test6-5Li" class="SubTestLiProto">                <p id="Test6-5Tag" class="SubTestTagProto">Test 6-3: Calling an inherited method, 'this' should point to the object called upon.</p>
+                <p id="Test6-5Output" class="waitingProto">status: none</p>
+</li>
+</ul>
+</li>
+          <li id="Test7Li" class="liProto">            <button id="Test7Button" class="startProto">Prototype Tests: Events</button>
+            <p id="Test7Output" class="waitingProto">status: none</p>
+            <ul id="Test7Sublist" class="SubTestProto">              <li id="Test7-newSubTest" class="SubTestNewProto">                <input id="Test7-newInput" class="SubTestNewInputProto" value="Override event." />
+                <button id="Test7-newButton" class="SubTestNewButtonProto">Create New SubTest</button>
+</li>
+              <li id="Test7-0Li" class="SubTestLiProto">                <p id="Test7-0Tag" class="SubTestTagProto">Test 7-0: Set up prototype chain, then add eventHandler to parent, then trigger on child.</p>
+                <p id="Test7-0Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test7-1Li" class="SubTestLiProto">                <p id="Test7-1Tag" class="SubTestTagProto">Test 7-1: Add eventHandler to parent, set up prototype chain, then trigger on child.</p>
+                <p id="Test7-1Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test7-2Li" class="SubTestLiProto">                <p id="Test7-2Tag" class="SubTestTagProto">Test 7-2: Override inherited event.</p>
+                <p id="Test7-2Output" class="waitingProto">status: none</p>
+</li>
+</ul>
+</li>
+          <li id="Test8Li" class="liProto">            <button id="Test8Button" class="startProto">Prototype Tests: CSS</button>
+            <p id="Test8Output" class="waitingProto">status: none</p>
+            <ul id="Test8Sublist" class="SubTestProto">              <li id="Test8-newSubTest" class="SubTestNewProto">                <input id="Test8-newInput" class="SubTestNewInputProto" value="Inherit css style from parent, after overriding and removal." />
+                <button id="Test8-newButton" class="SubTestNewButtonProto">Create New SubTest</button>
+</li>
+              <li id="Test8-0Li" class="SubTestLiProto">                <p id="Test8-0Tag" class="SubTestTagProto">Test 8-0: Inherit css style from parent.</p>
+                <p id="Test8-0Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test8-1Li" class="SubTestLiProto">                <p id="Test8-1Tag" class="SubTestTagProto">Test 8-1: Inherit css style from indirect parent.</p>
+                <p id="Test8-1Output" class="waitingProto">status: none</p>
+</li>
+              <li id="Test8-2Li" class="SubTestLiProto">                <p id="Test8-2Tag" class="SubTestTagProto">Test 8-2: Inherit css style from parent, after overriding and removal.</p>
+                <p id="Test8-2Output" class="waitingProto">status: none</p>
+</li>
+</ul>
+</li>
+          <li id="actions" class="liProto">            <button id="newTestButton">Create New Test</button>
+            <button id="resetOutputs">Reset outputs</button>
+            <button id="runTests">Run Tests</button>
+</li>
+</ul>
+</div>
+      <div id="normal-objects">        <div id="Prototypes" style="">          <div id="dobjects" style="">            <div id="TestListProto" style="">              <div id="liProto" style="">                <div id="startProto" style=""></div>
+                <div id="outputProto" style="" data-failed="function (message) {
+    // set message
+    this.text(&quot;status: &quot; + message);
+    
+    // set proto
+    var proto = this.getProp('failproto');
+    this.setProp('prototype', proto);
+}" data-succeeded="function () {   
+     // set message
+    this.text(&quot;status: Succeeded&quot;);
+    
+    // set proto
+    var proto = this.getProp('succeedproto');
+    this.setProp('prototype', proto);
+}" data-waiting="function () {   
+     // set message
+    this.text(&quot;status: none&quot;);
+    
+    // set proto
+    var proto = this.getProp('waitingproto');
+    this.setProp('prototype', proto);
+}">                  <div id="succeedProto" style="" class="outputProto"></div>
+                  <div id="failProto" style="" class="outputProto"></div>
+                  <div id="waitingProto" style="" class="outputProto"></div>
+</div>
+                <div id="SubTestProto" style="">                  <div id="SubTestTagProto" style=""></div>
+                  <div id="SubTestLiProto" style=""></div>
+                  <div id="SubTestNewProto" style="" class="liProto">                    <div id="SubTestNewInputProto" style=""></div>
+                    <div id="SubTestNewButtonProto" style=""></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+          <div id="objects" style="">            <div id="TestProto" style="" data-failed="function failed(msg) {
+    msg = msg || this.getProp('msg');
+    console.log(msg);
+    this.setProp('result', false);
+    this.setProp('msg', msg);
+}" data-succeeded="function succeeded() {
+    this.setProp('result', true);
+}" data-newsubtest="function (name) {
+    // create new id
+    var id = this.getProp(&quot;subtestid&quot;);
+    this.setProp(&quot;subtestid&quot;, id + 1);
+
+    // create li
+    var li = SynerJ.create({type: 'li'});
+    li.id(this.id() + &quot;-&quot; + id + &quot;Li&quot;);
+    li.setProp('prototype', SynerJ('SubTestLiProto'));
+    
+    // create name
+    var tag = SynerJ.create({type: 'p'});
+    tag.id(this.id() + &quot;-&quot; + id + &quot;Tag&quot;);
+    tag.text(name);
+    tag.setProp('prototype', SynerJ('SubTestTagProto'));
+
+    // create output
+    var p = SynerJ.create({type: 'p'});
+    p.id(this.id() + &quot;-&quot; + id + &quot;Output&quot;);
+    p.setProp('prototype', SynerJ('outputProto'));
+    li.setProp('output', p);
+    p.call('waiting');
+
+    // create test
+    var test = SynerJ.create({type: 'none'});
+    test.id(this.id() + &quot;-&quot; + id);
+    test.setProp('dobject', li);
+    test.setProp('run', function () { return this.call('succeeded'); });
+
+    test.setProp('output', p);
+ 
+    test.setProp('prototype', SynerJ('TestProto'));
+    this.append(test);
+
+    // add to list
+    var list = this.getProp('dobject').getProp('sublist');
+    li.append(tag);
+    li.append(p);
+    list.append(li);
+}" data-newrun="function () {
+    this.setProp('subtest', 0);
+}" data-waiting="function () {
+    var subtests = this.children();
+    
+    // set output for subtest
+    for(var i=0; i&lt;subtests.length; i++) {
+        subtests[i].call('waiting');
+    }
+    
+    // set output for test
+    var output = this.getProp('output');
+    output.call('waiting');
+}" data-run="function run() {
+    var count = 0;
+    this.call('newrun');
+    var tests = this.children();
+    for (var i=0; i&lt;tests.length; i++) {
+        var test = tests[i];
+        test.call('run');
+        var res = test.getProp('result');
+        if (!res)
+            count++;
+        test.call('setoutput');
+    }
+   
+   if (count === 0) {
+       this.call('succeeded');
+   } else {
+       this.call('failed', count + &quot; failed&quot;);
+   }
+   this.call('setoutput');
+}" data-setoutput="function setoutput() {
+    var result = this.getProp('result');
+    var output = this.getProp('output');
+    if (result)
+        output.call('succeeded');
+    else
+        output.call('failed', this.getProp('msg'));
+}"></div>
+</div>
+</div>
+        <div id="Tests" style="" data-reset="function () {
+    var tests = this.children();
+    for (var i=0; i&lt;tests.length; i++) {
+        var test = tests[i];
+        console.log(test.id());
+        test.call('waiting');
+    }
+}" data-new="function () {
+    
+    var name = this.call('newid');
+
+    this.setProp('name', name);
+    var li = SynerJ.create({type: 'li'});
+    li.id(name + &quot;Li&quot;);
+    li.setProp('prototype', SynerJ('liProto'));
+
+    var btn = SynerJ.create({type: 'button'});
+    btn.id(name + &quot;Button&quot;);
+    btn.setProp('prototype', SynerJ('startProto'));
+    btn.text(name);
+
+    var output = SynerJ.create({type: 'p'});
+    output.setProp('prototype', SynerJ('outputProto'));
+    output.call('waiting');
+    output.id(name + &quot;Output&quot;);
+
+    var sublist = SynerJ.create({type: 'ul'});
+    sublist.id(name + &quot;Sublist&quot;);
+    sublist.setProp('prototype', SynerJ('SubTestProto'));
+    li.setProp('sublist', sublist);
+
+    li.append(btn);
+    li.append(output);
+    li.append(sublist);
+    SynerJ('actions').before(li);
+
+    var test = SynerJ.create({type: 'none'});
+    test.setProp('prototype', SynerJ('TestProto'));
+    test.setProp('output', output);
+    test.setProp('dobject', li);
+    test.setProp('subtestid', 0);
+    test.id(name);
+    this.append(test);
+
+    this.call('addnewsubtest', sublist, name, test);
+    btn.setProp('test', test);
+}" data-newid="function () {
+    var id = this.getProp('id');
+    this.setProp('id', id + 1);
+    return &quot;Test&quot; + id;
+}" data-addnewsubtest="function (list, name, test) {
+    // create li
+    var li = SynerJ.create({type: 'li'});
+    li.setProp('prototype', SynerJ('SubTestNewProto'));
+    li.id(name + &quot;-newSubTest&quot;);
+
+    // create input
+    var input = SynerJ.create({type: 'input'});
+    input.setProp('prototype', SynerJ('SubTestNewInputProto'));
+    input.id(name + &quot;-newInput&quot;);
+
+    // create button
+    var button = SynerJ.create({type: 'button'});
+    button.setProp('prototype', SynerJ('SubTestNewButtonProto'));
+    button.id(name + &quot;-newButton&quot;);
+    button.text(&quot;Create New SubTest&quot;);
+    button.setProp('input', input);
+    button.setProp('test', test);
+
+    // add to list
+    li.append(input);
+    li.append(button);
+    list.append(li);
+}">          <div id="Test1" style="" class="TestProto">            <div id="Test1-0" style="" class="TestProto" data-run="function run() {
+    
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check normal property
+    object.setProp('foo', 'bar');
+    var prop = object.getProp('foo');
+    if (prop != 'bar') {
+        this.call('failed', &quot;Retrieved value isn't the same.&quot;);
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}"></div>
+            <div id="Test1-1" style="" class="TestProto" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check case sensitivity
+    object.setProp('FooBar', 'bar');
+    var prop = object.getProp('FooBar');
+    if (prop != 'bar') {
+        this.call('failed', &quot;Retrieved value isn't the same.&quot;);
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}">Test 1-1: dobject</div>
+            <div id="Test1-2" style="" class="TestProto" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check space exception
+    try {
+        object.setProp('foo bar', 'bar');
+        this.call('failed', &quot;No error thrown.&quot;);
+    } catch (err) {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}"></div>
+            <div id="Test1-3" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    object.setProp('foo-bar', 'bar');
+    var prop = object.getProp('foo-bar');
+    if (prop != 'bar') {
+        this.call('failed', &quot;Retrieved value isn't the same.&quot;);
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test1-4" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check space exception
+    try {
+        object.setProp('foo bar', 'bar');
+        this.call('failed', &quot;No error thrown setting the property.&quot;);
+    } catch (err) {
+        try {
+            object.getProp('foo bar', 'bar');
+            this.call('failed', &quot;No error thrown getting the property.&quot;);
+        } catch (err) {
+            this.call('succeeded');
+        }
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test1-5" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    object.setProp('foo_bar', 'bar');
+    var prop = object.getProp('foo_bar');
+    if (prop != 'bar') {
+        this.call('failed', &quot;Retrieved value isn't the same.&quot;);
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+</div>
+          <div id="Test2" style="" class="TestProto">            <div id="Test2-0" style="" class="TestProto" data-run="function run() {
+    
+    // create a Dobject
+    var object = SynerJ.create({type: 'div'});
+
+    // check normal property
+    object.setProp('foo', 'bar');
+    var prop = object.getProp('foo');
+    if (prop != 'bar') {
+        this.call('failed', &quot;Retrieved value isn't the same.&quot;);
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}"></div>
+            <div id="Test2-1" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check case sensitivity
+    object.setProp('FooBar', 'bar');
+    var prop = object.getProp('FooBar');
+    if (prop != 'bar') {
+        this.call('failed', &quot;Retrieved value isn't the same.&quot;);
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test2-2" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check space exception
+    try {
+        object.setProp('foo bar', 'bar');
+        this.call('failed', &quot;No error thrown.&quot;);
+    } catch (err) {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test2-3" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check property
+    object.setProp('foo-bar', 'bar');
+    var prop = object.getProp('foo-bar');
+    if (prop != 'bar') {
+        this.call('failed', &quot;Retrieved value isn't the same.&quot;);
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test2-4" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check space exception
+    try {
+        object.setProp('foo bar', 'bar');
+        this.call('failed', &quot;No error thrown setting the property.&quot;);
+    } catch (err) {
+        try {
+            object.getProp('foo bar', 'bar');
+            this.call('failed', &quot;No error thrown getting the property.&quot;);
+        } catch (err) {
+            this.call('succeeded');
+        }
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test2-5" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check property
+    object.setProp('foo_bar', 'bar');
+    var prop = object.getProp('foo_bar');
+    if (prop != 'bar') {
+        this.call('failed', &quot;Retrieved value isn't the same.&quot;);
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+</div>
+          <div id="Test3" style="" class="TestProto">            <div id="Test3-0" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    try {
+        object.id('foo');
+        if (object.id() === 'foo') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', &quot;Setting the id to foo failed.&quot;);
+        }
+    } catch (err) {
+        this.call('failed', &quot;Setting the property resulted in an error.&quot;);
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test3-1" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    try {
+        object.id('FooBar');
+        if (object.id() === 'FooBar') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', &quot;Setting the id to FooBar failed.&quot;);
+        }
+    } catch (err) {
+        this.call('failed', &quot;Setting the property resulted in an error.&quot;);
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test3-2" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    try {
+        object.id('foo-2');
+        if (object.id() === 'foo-2') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', &quot;Setting the id to foo failed.&quot;);
+        }
+    } catch (err) {
+        this.call('failed', &quot;Setting the property resulted in an error.&quot;);
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test3-3" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    try {
+        object.id('foo_2');
+        if (object.id() === 'foo_2') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', &quot;Setting the id to foo failed.&quot;);
+        }
+    } catch (err) {
+        this.call('failed', &quot;Setting the property resulted in an error.&quot;);
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test3-4" style="" data-run="function run() {
+
+    // create 2 objects
+    var object = SynerJ.create({type: 'none'});
+    var object2 = SynerJ.create({type: 'none'});
+
+    // give them the same id
+    object.id('foo');
+    
+    try {
+        object2.id('foo');
+        this.call('failed', &quot;No error was thrown.&quot;);
+    } catch (err) {
+        this.call('succeeded');
+    }
+
+    // remove the objects
+    SynerJ.delete(object.id());
+    SynerJ.delete(object2.id());
+
+}" class="TestProto"></div>
+            <div id="Test3-5" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    try {
+        object.id('foo bar');
+        this.call('failed', &quot;Setting the id to foo failed.&quot;);
+    } catch (err) {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+</div>
+          <div id="Test4" style="" class="TestProto">            <div id="Test4-0" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check property
+    try {
+        object.id('foo');
+        if (object.id() === 'foo') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', &quot;Setting the id to foo failed.&quot;);
+        }
+    } catch (err) {
+        this.call('failed', &quot;Setting the property resulted in an error.&quot;);
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test4-1" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check property
+    try {
+        object.id('FooBar');
+        if (object.id() === 'FooBar') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', &quot;Setting the id to FooBar failed.&quot;);
+        }
+    } catch (err) {
+        this.call('failed', &quot;Setting the property resulted in an error.&quot;);
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test4-2" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check property
+    try {
+        object.id('foo-2');
+        if (object.id() === 'foo-2') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', &quot;Setting the id to foo failed.&quot;);
+        }
+    } catch (err) {
+        this.call('failed', &quot;Setting the property resulted in an error.&quot;);
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test4-3" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check property
+    try {
+        object.id('foo_2');
+        if (object.id() === 'foo_2') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', &quot;Setting the id to foo failed.&quot;);
+        }
+    } catch (err) {
+        this.call('failed', &quot;Setting the property resulted in an error.&quot;);
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test4-4" style="" data-run="function run() {
+
+    // create 2 objects
+    var object = SynerJ.create({type: 'div'});
+    var object2 = SynerJ.create({type: 'div'});
+
+    // give them the same id
+    object.id('foo');
+    
+    try {
+        object2.id('foo');
+        this.call('failed', &quot;No error was thrown.&quot;);
+    } catch (err) {
+        this.call('succeeded');
+    }
+
+    // remove the objects
+    SynerJ.delete(object.id());
+    SynerJ.delete(object2.id());
+
+}" class="TestProto"></div>
+            <div id="Test4-5" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check property
+    try {
+        object.id('foo bar');
+        this.call('failed', &quot;Setting the id to foo failed.&quot;);
+    } catch (err) {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+</div>
+          <div id="Test5" style="" class="TestProto">            <div id="Test5-0" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    object.setProp('foo', 'test');
+    var val = object.getProp('foo');
+    if (typeof val === 'string' &amp;&amp; val === 'test')
+        this.call('succeeded');
+    else
+        this.call('failed', &quot;Setting a string didn't result in the same string.&quot;);
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test5-1" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    object.setProp('foo', 666);
+    var val = object.getProp('foo');
+    if (typeof val === 'number' &amp;&amp; val === 666)
+        this.call('succeeded');
+    else
+        this.call('failed', &quot;Setting a number didn't result in the same number.&quot;);
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test5-2" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check true 
+    object.setProp('foo', true);
+    var val = object.getProp('foo');
+    if (typeof val === 'boolean' &amp;&amp; val === true)
+        this.call('succeeded');
+    else
+        this.call('failed', &quot;Setting true didn't result in the boolean true.&quot;);
+
+    // check false
+    object.setProp('bar', false);
+    val = object.getProp('bar');
+    if (typeof val === 'boolean' &amp;&amp; val === false)
+        this.call('succeeded');
+    else
+        this.call('failed', &quot;Setting false didn't result in the boolean false.&quot;);
+        
+    // remove the object
+    SynerJ.delete(object.id());
+
+}" class="TestProto"></div>
+            <div id="Test5-3" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+    var object2 = SynerJ.create({type: 'none'});
+
+    // check true 
+    object.setProp('foo', object2);
+    var val = object.getProp('foo');
+    if (val.equals(object2))
+        this.call('succeeded');
+    else
+        this.call('failed', &quot;The returned object isn't the same.&quot;);
+
+    // remove the objects
+    SynerJ.delete(object.id());
+    SynerJ.delete(object2.id());
+
+}" class="TestProto"></div>
+            <div id="Test5-4" style="" data-run="function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+    var object2 = SynerJ.create({type: 'none'});
+    
+    // create array
+    var ar = ['foo', 2, true, object2];
+
+    // set array property
+    object.setProp('foo', ar);
+    var val = object.getProp('foo');
+    if (ar == val)
+        this.call('succeeded');
+    else
+        this.call('failed', &quot;The returned value isn't the same array.&quot;);
+
+    // remove the objects
+    SynerJ.delete(object.id());
+    SynerJ.delete(object2.id());
+
+}" class="TestProto"></div>
+            <div id="Test5-5" style="" class="TestProto"></div>
+            <div id="Test5-6" style="" class="TestProto"></div>
+</div>
+          <div id="Test6" style="" class="TestProto">            <div id="Test6-0" style="" data-run="function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    
+    // set parent property
+    parent.setProp('foo', 'bar');
+
+    // get property through chain
+    var val = child.getProp('foo');
+    
+    if (val === 'bar')
+        this.call('succeeded');
+    else
+        this.call('failed', &quot;Unable to retrieve the value through the chain.&quot;);
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+}" class="TestProto"></div>
+            <div id="Test6-1" style="" data-run="function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    var parent2 = SynerJ.create({type: 'none'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    parent.setProp('prototype', parent2);
+    
+    // set parent property
+    parent2.setProp('foo', 'bar');
+
+    // get property through chain
+    var val = child.getProp('foo');
+    
+    if (val === 'bar')
+        this.call('succeeded');
+    else
+        this.call('failed', &quot;Unable to retrieve the value through the chain.&quot;);
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+    SynerJ.delete(parent2.id());
+
+}" class="TestProto"></div>
+            <div id="Test6-2" style="" data-run="function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    
+    // set properties
+    parent.setProp('foo', 'bar');
+    child.setProp('foo', 'foo');
+
+    // get overriden property
+    var val = child.getProp('foo');
+    if (val == 'foo')
+        this.call('succeeded');
+    else
+        this.call('failed', &quot;The retrieved value isn't the overridden one.&quot;);
+
+    // remove property and retrieve again
+    child.removeProp('foo');
+    val = child.getProp('foo');
+    if (val === 'bar')
+        this.call('succeeded');
+    else
+        this.call('failed', &quot;Property was not found in the chain after deleting own.&quot;);
+        
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+}" class="TestProto"></div>
+            <div id="Test6-3" style="" data-run="function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    parent.setProp('prototype', child);
+    
+    // get non-existent property
+    try {
+        var val = child.getProp('foo');
+        if (!val)
+            this.call('succeeded');
+    } catch (err) {
+        this.call('failed', &quot;Error was thrown.&quot;)
+    }
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+}" class="TestProto"></div>
+            <div id="Test6-4" style="" class="TestProto"></div>
+            <div id="Test6-5" style="" class="TestProto"></div>
+</div>
+          <div id="Test7" style="" class="TestProto">            <div id="Test7-0" style="" data-run="function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+
+    // set handler for parent
+    parent.bind('foo', function (e) {
+        this.setProp('foo', 'bar');
+    });
+    
+    // trigger on child
+    child.trigger('foo');
+    var val = child.getProp('foo');
+    if (val == 'bar')
+        this.call('succeeded');
+    else
+        this.call('failed', &quot;The property set by the handler, was not found in the child object.&quot;);
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+}" class="TestProto"></div>
+            <div id="Test7-1" style="" data-run="function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    
+    // set handler for parent
+    parent.bind('foo', function (e) {
+        this.setProp('foo', 'bar');
+    });
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    
+    // trigger on child
+    child.trigger('foo');
+    var val = child.getProp('foo');
+    if (val == 'bar')
+        this.call('succeeded');
+    else
+        this.call('failed', &quot;The property set by the handler, was not found in the child object.&quot;);
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+}" class="TestProto"></div>
+            <div id="Test7-2" style="" data-run="function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    
+    // set handler for parent
+    parent.bind('foo', function (e) {
+        this.setProp('foo', 'bar');
+    });
+    
+    // 'override' event for child
+    child.bind('foo', function (e) {
+        this.setProp('foo', 'foo');
+    });
+        
+    // trigger on child
+    try {
+        child.trigger('foo');
+        var val = child.getProp('foo');
+        if (val == 'foo')
+            this.call('succeeded');
+        else
+            this.call('failed', &quot;The event was not overridden.&quot;);
+    } catch (err) {
+        this.call('failed', &quot;Triggering the event threw an error.&quot;);
+    }
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+}" class="TestProto"></div>
+</div>
+          <div id="Test8" style="" class="TestProto">            <div id="Test8-0" style="" class="TestProto"></div>
+            <div id="Test8-1" style="" class="TestProto"></div>
+            <div id="Test8-2" style="" class="TestProto"></div>
+</div>
+</div>
+</div>
+</div>
+    <div id="SynerJ-info">      <div id="SynerJ-idGenerator">3863</div>
+</div>
+</body>
+</html>
