@@ -27,7 +27,8 @@
     ],
     "dependencies": {
        "jsdom"      : "0.2.x",
-       "requireJS"  : ">=2.0.6"
+       "requireJS"  : ">=2.0.6",
+       "socket.io"  : ">=0.9.10"
     },
     "engines" : { "node" : ">=0.6.0" }
 }
