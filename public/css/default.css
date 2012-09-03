@@ -131,7 +131,7 @@ select, input, textarea, button { font:99% sans-serif; }
 #ACEditor {
   z-index: 1000000;
   position: relative;
-  width: 600px;
+  width: 800px;
   height: 600px;
 }
 /* Inspector */
@@ -164,8 +164,8 @@ a:hover {
 
 /* Evaluator */
 #EvaluatorArea {
-  width: 475px;
-  height: 450px;
+  width: 775px;
+  height: 425px;
   border: 1px solid grey;
 }
 
@@ -174,10 +174,10 @@ a:hover {
 }
 
 #EvaluatorOutput {
-  width: 475;
+  width: 775;
   height: 40px;
   padding: 5px;
-  margin-top: 475;
+  margin-top: 450px;
   border: 1px solid grey;
   overflow: auto;
 }

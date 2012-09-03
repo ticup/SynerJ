@@ -33,7 +33,7 @@ Dobject-0 {}
 #wheel2 {left: 37px; top: 45px;}
 #wheel3 {left: -10px; top: 45px;}
 #wheel4 {left: 36px; top: 5px;}
-.wheel1 {top: 6px; left: -10px; height: 25px; position: absolute; background-color: blue; width: 25px;}
-.wheel2 {top: 45px; left: 37px; height: 25px; position: absolute; background-color: blue; width: 25px;}
-.wheel3 {top: 45px; left: -10px; height: 25px; position: absolute; background-color: blue; width: 25px;}
-.wheel4 {top: 5px; left: 36px; height: 25px; position: absolute; background-color: blue; width: 25px;}
+.wheel1 {top: 6px; left: -10px; position: absolute; width: 25px; background-color: blue; height: 25px;}
+.wheel2 {top: 45px; left: 37px; position: absolute; width: 25px; background-color: blue; height: 25px;}
+.wheel3 {top: 45px; left: -10px; position: absolute; width: 25px; background-color: blue; height: 25px;}
+.wheel4 {top: 5px; left: 36px; position: absolute; width: 25px; background-color: blue; height: 25px;}

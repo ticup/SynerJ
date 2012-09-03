@@ -21,13 +21,13 @@ define(['order!jquery',
     // constructor
     function Evaluator() {
       this.jqContainer = $("<div id=Evaluator></div>");
+      insertInfo(this);
       this.textarea = $('<div id=EvaluatorArea>');
       this.output = $('<div id=EvaluatorOutput>');
       this.jqContainer.append(this.textarea);
       this.jqContainer.append(this.output);
       $('#SynerJ').append(this.jqContainer);
       
-      //insertInfo(this);
       insertButton(this, SynerJ);
 
       this.editor = ace.edit('EvaluatorArea');
@@ -45,14 +45,14 @@ define(['order!jquery',
       d.dialog();
       d.dialog({
         title: 'Evaluator',
-        width: 500,
+        width: 800,
         height: 600,
         resizeStop: function (event, ui) {
           var width = d.dialog('option', 'width');
           var height = d.dialog('option', 'height');
 
           evaluator.textarea.css('width', width - 25);
-          evaluator.textarea.css('height', height - 150);
+          evaluator.textarea.css('height', height - 180);
           evaluator.editor.resize();
 
           evaluator.output.css('width', width - 25);
@@ -63,8 +63,11 @@ define(['order!jquery',
 
     // sets up a listener for ctrl+e to evaluate the code
     Evaluator.prototype.setupListener = function () {
+      var evaluator = this;
       $(function () {
-        $('#EvaluatorArea').bind('keydown', 'ctrl+e', evaluateSelected);
+        $('#EvaluatorArea').bind('keydown', 'ctrl+e', function () {
+          evaluator.evalText();
+        });
       });
     };
 
@@ -88,30 +91,27 @@ define(['order!jquery',
         this.output.html(curr + '<br \\>' + ">");
     };
     
-    // evaluates the selected code (dead code)
-    function evaluateSelected() {
-      var text = $('#EvaluatorArea').val();
-      if (text === '')
-        text = $('#EvaluatorArea').html();
-      $.globalEval(text);
-    }
+    // evaluates the selected code
+    Evaluator.prototype.evalText = function evalSelected() {
+      var evaluator = this;
+      var text = this.getSelectedText();
+      console.log(text);
+      text = text || evaluator.editor.getSession().getValue();
+      console.log(text);
+      SynerJ.exec(text, function (res) {
+        evaluator.log(res);
+        evaluator.newInstruction();
+      });
+    };
     
-    // get the selected text (dead code)
-    function getSelected() {
-      var t = '';
-      if(window.getSelection){
-        t = window.getSelection();
-      }else if(document.getSelection){
-        t = document.getSelection();
-      }else if(document.selection){
-        t = document.selection.createRange().text;
-      }
-      return t;
-    }
+    // get the selected text
+    Evaluator.prototype.getSelectedText = function getSelectedText() {
+      return this.editor.getCopyText();
+    };
 
     // insertInfo
     function insertInfo(evaluator) {
-      var info = $('<p> You can evaluate your code by pressing ctrl+e </p>');
+      var info = $('<p> You can evaluate the selected (or all if none is selected) code by pressing ctrl+e </p>');
       evaluator.jqContainer.append(info);
     }
 
@@ -120,11 +120,7 @@ define(['order!jquery',
       var button = $('<button> Evaluate </button>');
       evaluator.jqContainer.append(button);
       button.bind('click', function evaluate(e) {
-        var text = evaluator.editor.getSession().getValue();
-        SynerJ.exec(text, function (res) {
-          evaluator.log(res);
-          evaluator.newInstruction();
-        });
+        evaluator.evalText();
       });
     }
   return Evaluator;
