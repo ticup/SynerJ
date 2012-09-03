@@ -29,3 +29,5 @@ public/css/*
 !public/html/default.html
 !public/js/default.js
 !public/css/default.css
+
+!public/css/images
