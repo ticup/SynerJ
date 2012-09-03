@@ -26,7 +26,8 @@
         }
     ],
     "dependencies": {
-       "jsdom"      : "0.2.x"
+       "jsdom"      : "0.2.x",
+       "requireJS"  : ">=2.0.6"
     },
-    "engines" : { "node" : ">=0.1.9" }
+    "engines" : { "node" : ">=0.6.0" }
 }
