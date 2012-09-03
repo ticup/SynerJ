@@ -25,7 +25,7 @@ require.config({
     sox: '../client/env/sox',
   // misc
     sConfig: '../shared/config',
-    config: '../client/config',
+    config: '../client/config'
 	},
   baseUrl: window.location.protocol + "//" + window.location.host + window.location.pathname.split("/").slice(0, -1).join("/") + "/public"
 

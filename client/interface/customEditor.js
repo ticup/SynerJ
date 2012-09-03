@@ -9,7 +9,7 @@
 // Author: Tim Coppieters
 // Date: September 2011
 
-define(['require', 'jquery', 'SynerJ', 'ace/lib/ace/ace', 'ace/lib/ace/mode/javascript'],
+define(['require', 'jquery', 'SynerJ', 'ace/ace', 'ace/mode/javascript'],
   function (require, $, SynerJ, ace, aceJS) {
   
   // custom editor for SlickGrid that uses other editing
@@ -41,8 +41,7 @@ define(['require', 'jquery', 'SynerJ', 'ace/lib/ace/ace', 'ace/lib/ace/mode/java
         self.position(args.position);
 
         editor = ace.edit('ACEditor');
-        var JavaScriptMode = aceJS.Mode;
-        editor.getSession().setMode(new JavaScriptMode());
+        editor.session.setMode("ace/mode/javascript");
 
         type = 'function';
         $main = $wrapper;

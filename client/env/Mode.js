@@ -104,4 +104,5 @@ define(['config', 'jqueryui/draggable'], function (config) {
     return Mode;
   })();
 
+  return Mode;
 });

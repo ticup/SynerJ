@@ -9,9 +9,9 @@
 // Date: September 2011
 
 define(['order!jquery',
-        'ace/lib/ace/ace',
+        'ace/ace',
         'SynerJ',
-        'ace/lib/ace/mode/javascript',
+        'ace/mode/javascript',
         'order!hotkeys',
         'order!jqueryui/dialog',
         'sox'], function($, ace, SynerJ, aceJS) {
@@ -31,8 +31,7 @@ define(['order!jquery',
       insertButton(this, SynerJ);
 
       this.editor = ace.edit('EvaluatorArea');
-      var JavaScriptMode = aceJS.Mode;
-      this.editor.getSession().setMode(new JavaScriptMode());
+      this.editor.session.setMode("ace/mode/javascript");
       
       this.jqContainer.hide();
       this.setupListener();

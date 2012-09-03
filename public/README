@@ -1,3 +1,0 @@
-Ace is in the public folder, because it causes some errors (concerning path location) when used
-with requireJS. See:
-https://github.com/ajaxorg/ace/issues/708
