@@ -29,7 +29,10 @@
        "jsdom"      : "0.2.x",
        "requireJS"  : ">=2.0.6",
        "socket.io"  : ">=0.9.10",
-       "node-proxy" : ">=0.6.0"
+       "node-proxy" : ">=0.5.2",
+       "node-static": ">=0.6.1",
+       "should"     : ">=1.1.0",
+       "mocha"      : ">=1.4.2"
     },
     "engines" : { "node" : ">=0.6.0" }
 }
