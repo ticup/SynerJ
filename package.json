@@ -28,7 +28,8 @@
     "dependencies": {
        "jsdom"      : "0.2.x",
        "requireJS"  : ">=2.0.6",
-       "socket.io"  : ">=0.9.10"
+       "socket.io"  : ">=0.9.10",
+       "node-proxy" : ">=0.6.0"
     },
     "engines" : { "node" : ">=0.6.0" }
 }
