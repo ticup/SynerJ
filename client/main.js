@@ -8,8 +8,8 @@ require.config({
     jstree: 'libs/jstree/jstree.jquery.require',
 		slickgrid: 'libs/slick.grid.require',
     socket: 'libs/socket/socket.io',
-    order: 'libs/order',
-    text: 'libs/text',
+    order: 'libs/requirejs/order',
+    text: 'libs/requirejs/text',
   // shared env code
     sDobject: '../shared/Dobject',
     'sDobject.core': '../shared/Dobject.core',
@@ -36,6 +36,7 @@ define(["jquery", "SynerJ", "require", "Mode", "sox", propsLink],
 
   var installProperties = require(propsLink);
   var parent = SynerJ(SynerJ.objectsParent);
+  SynerJ.Mode = new Mode(SynerJ);
   SynerJ.Mode.application();
 
   $(function () {

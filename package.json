@@ -32,7 +32,9 @@
        "requireJS"  : ">=2.0.6",
        "socket.io"  : ">=0.9.10",
        "node-proxy" : ">=0.5.2",
-       "node-static": ">=0.6.1",
+       "node-static": ">=0.6.1"
+      },
+    "devDependencies": {
        "should"     : ">=1.1.0",
        "mocha"      : ">=1.4.2"
     },

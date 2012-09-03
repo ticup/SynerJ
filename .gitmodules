@@ -1,5 +1,5 @@
-[submodule "public/libs/ace"]
-	path = public/libs/ace
+[submodule "public/ace"]
+	path = public/ace
 	url = https://github.com/ajaxorg/ace.git
 [submodule "SlickGrid"]
 	path = SlickGrid

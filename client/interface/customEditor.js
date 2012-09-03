@@ -1,6 +1,6 @@
 // client/interface/customEditor.js
 //
-// Custom editor for the SlickGrid library used by client/interface/Editor.js 
+// Custom editor for the SlickGrid library used by client/interface/Editor.js
 // This makes sure the appropriate actions happen when the user wants to edit a cell
 // according to which type of property it tries to edit.
 //
@@ -9,7 +9,8 @@
 // Author: Tim Coppieters
 // Date: September 2011
 
-define(['require', 'jquery', 'SynerJ', 'libs/ace/lib/ace/ace', 'libs/ace/lib/ace/mode/javascript'], function (require, $, SynerJ, ace) {
+define(['require', 'jquery', 'SynerJ', 'ace/lib/ace/ace', 'ace/lib/ace/mode/javascript'],
+  function (require, $, SynerJ, ace, aceJS) {
   
   // custom editor for SlickGrid that uses other editing
   // types depending on the type of the value it is editing.
@@ -38,9 +39,9 @@ define(['require', 'jquery', 'SynerJ', 'libs/ace/lib/ace/ace', 'libs/ace/lib/ace
         $input = $("<DIV id=ACEditor />")
             .appendTo($wrapper);
         self.position(args.position);
-	      
+
         editor = ace.edit('ACEditor');
-        var JavaScriptMode = require('libs/ace/lib/ace/mode/javascript').Mode;
+        var JavaScriptMode = aceJS.Mode;
         editor.getSession().setMode(new JavaScriptMode());
 
         type = 'function';
@@ -61,7 +62,7 @@ define(['require', 'jquery', 'SynerJ', 'libs/ace/lib/ace/ace', 'libs/ace/lib/ace
           
          type = 'attribute';
          $main = $input;
-      } 
+      }
      };
 
     // handle special keyboard strokes
@@ -105,7 +106,7 @@ define(['require', 'jquery', 'SynerJ', 'libs/ace/lib/ace/ace', 'libs/ace/lib/ace
       if(type === 'function')
         $wrapper
             .css("top", position.top - 5)
-            .css("left", position.left - 5)
+            .css("left", position.left - 5);
     };
 
     this.destroy = function() {
@@ -119,7 +120,7 @@ define(['require', 'jquery', 'SynerJ', 'libs/ace/lib/ace/ace', 'libs/ace/lib/ace
 
     this.loadValue = function(item) {
       var val = item[args.column.field];
-      if (type === 'function') { 
+      if (type === 'function') {
         val = val.toString();
         editor.getSession().setValue(val);
       } else {
@@ -129,7 +130,7 @@ define(['require', 'jquery', 'SynerJ', 'libs/ace/lib/ace/ace', 'libs/ace/lib/ace
     };
 
     this.serializeValue = function() {
-      if (type === 'function') 
+      if (type === 'function')
         return editor.getSession().getValue();
       return $input.val();
     };

@@ -7,13 +7,13 @@
 //    - lockObject(obj, callback)
 //    - freeObject(obj, callback)
 //  3. Sync method: sends the given event with data to the server socket
-//  4. Makes it useable as a function to get a object, eg: SynerJ('DobjectName') 
+//  4. Makes it useable as a function to get a object, eg: SynerJ('DobjectName')
 //
 // Author: Tim Coppieters
 // Date: september 2011
 
-define(["sSynerJ", "jquery", "config"],
-  function (sSynerJ, $, config) {
+define(["sSynerJ", "Mode", "jquery", "config"],
+  function (sSynerJ, mode, $, config) {
   
   var SynerJ = (function () {
     // install container for Interface items

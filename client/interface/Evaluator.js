@@ -9,18 +9,18 @@
 // Date: September 2011
 
 define(['order!jquery',
-        'libs/ace/lib/ace/ace',
+        'ace/lib/ace/ace',
         'SynerJ',
-        'libs/ace/lib/ace/mode/javascript',
+        'ace/lib/ace/mode/javascript',
         'order!hotkeys',
         'order!jqueryui/dialog',
-        'sox'], function($, ace, SynerJ) {
+        'sox'], function($, ace, SynerJ, aceJS) {
   
   var Evaluator = (function () {
     
     // constructor
     function Evaluator() {
-      this.jqContainer = $("<div id=Evaluator></div>"); 
+      this.jqContainer = $("<div id=Evaluator></div>");
       this.textarea = $('<div id=EvaluatorArea>');
       this.output = $('<div id=EvaluatorOutput>');
       this.jqContainer.append(this.textarea);
@@ -31,7 +31,7 @@ define(['order!jquery',
       insertButton(this, SynerJ);
 
       this.editor = ace.edit('EvaluatorArea');
-      var JavaScriptMode = require('libs/ace/lib/ace/mode/javascript').Mode;
+      var JavaScriptMode = aceJS.Mode;
       this.editor.getSession().setMode(new JavaScriptMode());
       
       this.jqContainer.hide();
@@ -91,7 +91,7 @@ define(['order!jquery',
     
     // evaluates the selected code (dead code)
     function evaluateSelected() {
-      var text = $('#EvaluatorArea').val(); 
+      var text = $('#EvaluatorArea').val();
       if (text === '')
         text = $('#EvaluatorArea').html();
       $.globalEval(text);
@@ -114,7 +114,7 @@ define(['order!jquery',
     function insertInfo(evaluator) {
       var info = $('<p> You can evaluate your code by pressing ctrl+e </p>');
       evaluator.jqContainer.append(info);
-    };
+    }
 
     // insertButton
     function insertButton(evaluator, SynerJ) {

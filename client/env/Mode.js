@@ -5,13 +5,15 @@
 // Author: Tim Coppieters
 // Date: february 2012
 
-define(['config', 'SynerJ', 'jqueryui/draggable'], function (config, SynerJ) {
+define(['config', 'jqueryui/draggable'], function (config) {
 
   var Mode = (function () {
 
     // constructor
-    function Mode() {
+    function Mode(SynerJ) {
       this.active = 1;
+      this.SynerJ = SynerJ;
+      SynerJ.Mode = this;
     }
 
     // isDevelopment
@@ -28,6 +30,7 @@ define(['config', 'SynerJ', 'jqueryui/draggable'], function (config, SynerJ) {
     // are removed and you can now change the top and left css attributes of the elements
     // by simply dragging them.
     Mode.prototype.development = function () {
+      var SynerJ = this.SynerJ;
       // set active mode to development
       this.active = 0;
 
@@ -69,6 +72,7 @@ define(['config', 'SynerJ', 'jqueryui/draggable'], function (config, SynerJ) {
     // Set the environment in application mode: all objects have their normal event handlers
     // again.
     Mode.prototype.application = function () {
+      var SynerJ = this.SynerJ;
       // set active mode to application
       this.active = 1;
 
@@ -88,7 +92,7 @@ define(['config', 'SynerJ', 'jqueryui/draggable'], function (config, SynerJ) {
       function disableDrag(obj) {
         obj.jqEl.draggable("destroy");
         obj.jqEl.removeAttr('style');
-      };
+      }
 
       // do this for all Dobjects (all childeren of the Dobjects parent)
       SynerJ._treeWalk(parent, function (obj) {
@@ -100,5 +104,4 @@ define(['config', 'SynerJ', 'jqueryui/draggable'], function (config, SynerJ) {
     return Mode;
   })();
 
-  SynerJ.Mode = new Mode();
 });

@@ -9,8 +9,8 @@ define(['sDobject'], function (Dobject) {
       val = this._getProp(name);
       if (name === 'prototype' && Dobject.instanceOf(val)) {
         val._listenForEvents();
-      };
-    };
+      }
+    }
 
     return setProp;
   })();
@@ -22,18 +22,18 @@ define(['sDobject'], function (Dobject) {
   Dobject.prototype._bind = function _bind(event, handler) {
     // we only allow 1 handler per event
     this._unbind(event);
-    // save the string representation 
+    // save the string representation
     this.SynerJ._addHandler(this.id(), event, handler);
     this._listenForEvent(event);
   };
 
-  // unbind: Remove the saved string represenation in the SynerJ object and 
+  // unbind: Remove the saved string represenation in the SynerJ object and
   Dobject.prototype._unbind = function _unbind(event) {
     this.SynerJ._removeHandler(this.id(), event);
     this._stopListenForEvent();
   };
 
-  // listen for events: This will set up pass-to-server-listeners for all the events this 
+  // listen for events: This will set up pass-to-server-listeners for all the events this
   // object has handlers of.
   Dobject.prototype._listenForEvents = function () {
     var id = this.id();
@@ -66,7 +66,7 @@ define(['sDobject'], function (Dobject) {
   // object is in between them that also listens for this event.
   Dobject.prototype._stopListenForEvent = function stopListenForEvent(event) {
     var SynerJ = this.SynerJ;
-    if (SynerJ.Mode.isApplication()) {
+    if (SynerJ.Mode && SynerJ.Mode.isApplication()) {
       // note: this can be done way more performant
       this._applyToHasPrototype(function (obj) {
         obj.jqEl.unbind(event);
