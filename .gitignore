@@ -25,3 +25,7 @@ public/css/*
 !public/html/car.html
 !public/js/car.js
 !public/css/car.css
+
+!public/html/default.html
+!public/js/default.js
+!public/css/default.css
