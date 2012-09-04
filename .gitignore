@@ -18,6 +18,8 @@ public/html/*
 public/js/*
 public/css/*
 
+public/export
+
 !public/html/tests.html
 !public/js/tests.js
 !public/css/tests.css
@@ -31,3 +33,4 @@ public/css/*
 !public/css/default.css
 
 !public/css/images
+
