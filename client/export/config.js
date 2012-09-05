@@ -1,14 +1,13 @@
 define([], function () {
 
-  var cssProps = ["border", "border-radius", "margin", "padding", "transition",
-                  "-moz-transition", "-webkit-transition"];
-
   return {
-    cssProps: cssProps,
-    objectsParent: 'SynerJ-Objects',
+    DobjectIdName : 'Dobject',
+    tagSeparator  : '-',
+ 
+    cssProps      : ["border", "border-radius", "margin", "padding", "transition",
+                     "-moz-transition", "-webkit-transition"],
+    objectsParent : 'SynerJ-Objects',
     dobjectsParent: 'visual-objects',
-    normalObjectsParent: 'normal-objects',
-    port: 2290,
-    url: 'localhost'
+    normalObjectsParent: 'normal-objects'
   };
 });

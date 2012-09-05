@@ -31,8 +31,8 @@ require.config({
 
 });
 var propsLink = "public/js/" + window.location.pathname.slice(1).split(".")[0] + ".js";
-define(["jquery", "SynerJ", "require", "Mode", "sox", propsLink], 
-	function($, SynerJ, require) {
+define(["jquery", "SynerJ", "require", "Mode", "sox", propsLink],
+	function($, SynerJ, require, Mode) {
 
   var installProperties = require(propsLink);
   var parent = SynerJ(SynerJ.objectsParent);

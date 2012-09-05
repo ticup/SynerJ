@@ -26,7 +26,6 @@
         }
     ],
     "dependencies": {
-       "request"        : ">=2.11.0",
        "jsdom"          : "0.2.14",
        "cssom"          : "0.2.5",
        "jquery"         : "1.7.3",

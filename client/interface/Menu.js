@@ -65,11 +65,19 @@ define(["order!jquery",
         e.preventDefault();
       });
 
+      // export button
+      var exp = $('<button>Export Application</button>');
+      exp.bind('click', function (e) {
+        window.location.href = window.location.pathname.slice(1).split(".")[0] + ".zip";
+        e.preventDefault();
+      });
+
       // add to container
       menu.jqContainer.append(inspector)
                       .append(evaluator)
                       .append(application)
-                      .append(development);
+                      .append(development)
+                      .append(exp);
 
      }
 

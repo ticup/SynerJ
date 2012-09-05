@@ -58,7 +58,7 @@ define(['Dobject', 'config'], function(Dobject, cfg) {
     SynerJ.prototype.create = function (config) {
       config = (typeof config === 'undefined') ? {} : config;
       config.id = typeof config.id == 'undefined' ?
-        (settings.DobjectIdName + settings.tagSeparator + this.nextId()) :
+        (cfg.DobjectIdName + cfg.tagSeparator + this.nextId()) :
         config.id; 
       // a normal object = hidden div
       if (!config.type || config.type == 'none') {
@@ -89,8 +89,8 @@ define(['Dobject', 'config'], function(Dobject, cfg) {
   // nextId
   SynerJ.prototype.nextId = function nextId() {
     var idGenerator = this.window.jQuery('#SynerJ-idGenerator');
-    var id = ++(parseInt(idGenerator.html()));
-    idGenerator.html(id);
+    var id = parseInt(idGenerator.html());
+    idGenerator.html(++id);
     return id;
   };
 
@@ -168,7 +168,7 @@ define(['Dobject', 'config'], function(Dobject, cfg) {
     // getHandler
     SynerJ.prototype._getHandler = function (id, event) {
       var handlers = this.handlers;
-      return handlers[id][event];
+      return (handlers[id] && handlers[id][event]);
     };
 
     // getHandlers
@@ -193,12 +193,12 @@ define(['Dobject', 'config'], function(Dobject, cfg) {
   
   // make client-side SynerJ object that can be either called as
   // a function SynerJ('id') --> SynerJ.get('id')
-  // or used as a normal SynerJ object.
+  // or used as a normal SynerJ objects
   var SynerJ = function (name) {
     return SynerJ.get(name);
   };
   
-  // make the shared SynerJ functions accessible through SynerJ.
+  // make the shared SynerJ functions accessible through SynerJ
   SynerJ.constructor.prototype = sObj;
   SynerJ.__proto__ = sObj;
 

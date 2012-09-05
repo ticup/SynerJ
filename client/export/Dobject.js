@@ -485,19 +485,35 @@ define(['config'], function (config) {
 
     // bind
     Dobject.prototype.bind = function (event, handler) {
-      var obj = this;
-      this.SynerJ._addHandler(this, event, handler);
+      var SynerJ = this.SynerJ;
+      SynerJ._addHandler(this, event, handler);
+      var chandler = function (e) {
+        SynerJ($(this).attr('id')).trigger(event);
+      };
       this.jqEl.unbind(event);
-      this.jqEl.bind(event, function (e) {
-        obj.trigger(event);
+      this.jqEl.bind(event, chandler);
+      this.applyToHasPrototype(function (obj) {
+        obj.jqEl.unbind(event);
+        obj.jqEl.bind(event, chandler);
       });
       return this;
     };
 
 		// unbind
 		Dobject.prototype.unbind = function (event) {
-      this.SynerJ._removeHandler(this, event);
-      this.jqEl.unbind(event);
+      var SynerJ = this.SynerJ;
+      SynerJ._removeHandler(this, event);
+      // note: this can be done way more performant
+      this.applyToHasPrototype(function (obj) {
+        obj.jqEl.unbind(event);
+      });
+
+      this.applyToHasPrototype(function (obj) {
+        if (SynerJ.getHandlers(obj)[event]) {
+          obj.bind(event, obj.getHandler(event));
+          return false;
+        }
+      });
       return this;
 		};
     
@@ -903,9 +919,9 @@ define(['config'], function (config) {
     return Proxy.create(new dobjectHandler(obj), Object.getPrototypeOf(obj));
   };
 
-  //ProxyDobject.instanceOf = function instanceOf(obj) {
-  //  return obj instanceof Dobject;
-  //};
+  ProxyDobject.instanceOf = function instanceOf(obj) {
+    return (obj instanceof Dobject);
+  };
 
 return ProxyDobject;
 });
