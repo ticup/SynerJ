@@ -29,7 +29,7 @@
        "jsdom"          : "0.2.14",
        "cssom"          : "0.2.5",
        "jquery"         : "1.7.3",
-       "requireJS"      : ">=2.0.6",
+       "requirejs"      : ">=2.0.6",
        "socket.io"      : ">=0.9.10",
        "node-proxy"     : ">=0.5.2",
        "node-static"    : ">=0.6.1",
