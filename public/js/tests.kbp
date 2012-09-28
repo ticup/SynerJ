@@ -1,0 +1,1698 @@
+SynerJ('newTestButton')._bind('click', function (event) {
+    var factory = this.getProp('factory');    
+    factory.call("new");
+});
+SynerJ('resetOutputs')._bind('click', function (event) {
+    var tests = this.getProp('tests');
+    tests.call('reset');
+});
+SynerJ('runTests')._bind('click', function (event) {
+    var tests = this.getProp('Tests');
+    tests.call('run');
+});
+SynerJ('startProto')._bind('click', function (event) {
+    // get test object
+    var test = this.getProp('test');
+
+    // run test
+    test.call('run');
+});
+SynerJ('SubTestNewButtonProto')._bind('click', function (event) {
+    var input = this.getProp('input');
+    var text = input.val();
+
+    var test = this.getProp('test');
+    test.call('newsubtest', text);
+});
+SynerJ('Test1Li')._setProp('prototype', 'object:liProto');
+SynerJ('Test1Li')._setProp('sublist', 'object:Test1Sublist');
+SynerJ('Test1Button')._setProp('prototype', 'object:startProto');
+SynerJ('Test1Button')._setProp('test', 'object:Test1');
+SynerJ('Test1Button')._setProp('events', NaN);
+SynerJ('Test1Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test1Sublist')._setProp('prototype', 'object:SubTestProto');
+SynerJ('Test1-newSubTest')._setProp('prototype', 'object:SubTestNew');
+SynerJ('Test1-newInput')._setProp('prototype', 'object:SubTestNewInputProto');
+SynerJ('Test1-newButton')._setProp('prototype', 'object:SubTestNewButtonProto');
+SynerJ('Test1-newButton')._setProp('input', 'object:Test1-newInput');
+SynerJ('Test1-newButton')._setProp('test', 'object:Test1');
+SynerJ('Test1-0Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test1-0Li')._setProp('output', 'object:Test1-Output');
+SynerJ('Test1-0Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test1-0Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test1-1Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test1-1Li')._setProp('output', 'object:Test1-1Output');
+SynerJ('Test1-1Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test1-1Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test1-2Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test1-2Li')._setProp('output', 'object:Test1-2Output');
+SynerJ('Test1-2Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test1-2Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test1-3Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test1-3Li')._setProp('output', 'object:Test1-3Output');
+SynerJ('Test1-3Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test1-3Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test1-4Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test1-4Li')._setProp('output', 'object:Test1-4Output');
+SynerJ('Test1-4Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test1-4Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test1-5Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test1-5Li')._setProp('output', 'object:Test1-5Output');
+SynerJ('Test1-5Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test1-5Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test2Li')._setProp('prototype', 'object:liProto');
+SynerJ('Test2Li')._setProp('sublist', 'object:Test2Sublist');
+SynerJ('Test2Button')._setProp('prototype', 'object:startProto');
+SynerJ('Test2Button')._setProp('test', 'object:Test2');
+SynerJ('Test2Button')._setProp('events', NaN);
+SynerJ('Test2Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test2Sublist')._setProp('prototype', 'object:SubTestProto');
+SynerJ('Test2-newSubTest')._setProp('prototype', 'object:SubTestNewProto');
+SynerJ('Test2-newInput')._setProp('prototype', 'object:SubTestNewInputProto');
+SynerJ('Test2-newButton')._setProp('prototype', 'object:SubTestNewButtonProto');
+SynerJ('Test2-newButton')._setProp('input', 'object:Test2-newInput');
+SynerJ('Test2-newButton')._setProp('test', 'object:Test2');
+SynerJ('Test2-0Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test2-0Li')._setProp('output', 'object:Test2-0Output');
+SynerJ('Test2-0Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test2-0Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test2-1Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test2-1Li')._setProp('output', 'object:Test2-1Output');
+SynerJ('Test2-1Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test2-1Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test2-2Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test2-2Li')._setProp('output', 'object:Test2-2Output');
+SynerJ('Test2-2Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test2-2Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test2-3Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test2-3Li')._setProp('output', 'object:Test2-3Output');
+SynerJ('Test2-3Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test2-3Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test2-4Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test2-4Li')._setProp('output', 'object:Test2-4Output');
+SynerJ('Test2-4Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test2-4Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test2-5Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test2-5Li')._setProp('output', 'object:Test2-5Output');
+SynerJ('Test2-5Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test2-5Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test3Li')._setProp('prototype', 'object:liProto');
+SynerJ('Test3Li')._setProp('sublist', 'object:Test3Sublist');
+SynerJ('Test3Button')._setProp('prototype', 'object:startProto');
+SynerJ('Test3Button')._setProp('test', 'object:Test3');
+SynerJ('Test3Button')._setProp('events', NaN);
+SynerJ('Test3Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test3Sublist')._setProp('prototype', 'object:SubTestProto');
+SynerJ('Test3-newSubTest')._setProp('prototype', 'object:SubTestNewProto');
+SynerJ('Test3-newInput')._setProp('prototype', 'object:SubTestNewInputProto');
+SynerJ('Test3-newButton')._setProp('prototype', 'object:SubTestNewButtonProto');
+SynerJ('Test3-newButton')._setProp('input', 'object:Test3-newInput');
+SynerJ('Test3-newButton')._setProp('test', 'object:Test3');
+SynerJ('Test3-0Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test3-0Li')._setProp('output', 'object:Test3-0Output');
+SynerJ('Test3-0Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test3-0Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test3-1Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test3-1Li')._setProp('output', 'object:Test3-1Output');
+SynerJ('Test3-1Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test3-1Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test3-2Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test3-2Li')._setProp('output', 'object:Test3-2Output');
+SynerJ('Test3-2Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test3-2Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test3-3Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test3-3Li')._setProp('output', 'object:Test3-3Output');
+SynerJ('Test3-3Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test3-3Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test3-4Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test3-4Li')._setProp('output', 'object:Test3-4Output');
+SynerJ('Test3-4Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test3-4Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test3-5Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test3-5Li')._setProp('output', 'object:Test3-5Output');
+SynerJ('Test3-5Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test3-5Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test4Li')._setProp('prototype', 'object:liProto');
+SynerJ('Test4Li')._setProp('sublist', 'object:Test4Sublist');
+SynerJ('Test4Button')._setProp('prototype', 'object:startProto');
+SynerJ('Test4Button')._setProp('test', 'object:Test4');
+SynerJ('Test4Button')._setProp('events', NaN);
+SynerJ('Test4Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test4Sublist')._setProp('prototype', 'object:SubTestProto');
+SynerJ('Test4-newSubTest')._setProp('prototype', 'object:SubTestNewProto');
+SynerJ('Test4-newInput')._setProp('prototype', 'object:SubTestNewInputProto');
+SynerJ('Test4-newButton')._setProp('prototype', 'object:SubTestNewButtonProto');
+SynerJ('Test4-newButton')._setProp('input', 'object:Test4-newInput');
+SynerJ('Test4-newButton')._setProp('test', 'object:Test4');
+SynerJ('Test4-0Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test4-0Li')._setProp('output', 'object:Test4-0Output');
+SynerJ('Test4-0Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test4-0Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test4-1Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test4-1Li')._setProp('output', 'object:Test4-1Output');
+SynerJ('Test4-1Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test4-1Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test4-2Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test4-2Li')._setProp('output', 'object:Test4-2Output');
+SynerJ('Test4-2Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test4-2Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test4-3Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test4-3Li')._setProp('output', 'object:Test4-3Output');
+SynerJ('Test4-3Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test4-3Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test4-4Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test4-4Li')._setProp('output', 'object:Test4-4Output');
+SynerJ('Test4-4Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test4-4Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test4-5Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test4-5Li')._setProp('output', 'object:Test4-5Output');
+SynerJ('Test4-5Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test4-5Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test5Li')._setProp('prototype', 'object:liProto');
+SynerJ('Test5Li')._setProp('sublist', 'object:Test5Sublist');
+SynerJ('Test5Button')._setProp('prototype', 'object:startProto');
+SynerJ('Test5Button')._setProp('test', 'object:Test5');
+SynerJ('Test5Button')._setProp('events', NaN);
+SynerJ('Test5Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test5Sublist')._setProp('prototype', 'object:SubTestProto');
+SynerJ('Test5-newSubTest')._setProp('prototype', 'object:SubTestNewProto');
+SynerJ('Test5-newInput')._setProp('prototype', 'object:SubTestNewInputProto');
+SynerJ('Test5-newButton')._setProp('prototype', 'object:SubTestNewButtonProto');
+SynerJ('Test5-newButton')._setProp('input', 'object:Test5-newInput');
+SynerJ('Test5-newButton')._setProp('test', 'object:Test5');
+SynerJ('Test5-0Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test5-0Li')._setProp('output', 'object:Test5-0Output');
+SynerJ('Test5-0Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test5-0Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test5-1Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test5-1Li')._setProp('output', 'object:Test5-1Output');
+SynerJ('Test5-1Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test5-1Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test5-2Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test5-2Li')._setProp('output', 'object:Test5-2Output');
+SynerJ('Test5-2Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test5-2Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test5-3Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test5-3Li')._setProp('output', 'object:Test5-3Output');
+SynerJ('Test5-3Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test5-3Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test5-4Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test5-4Li')._setProp('output', 'object:Test5-4Output');
+SynerJ('Test5-4Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test5-4Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test6Li')._setProp('prototype', 'object:liProto');
+SynerJ('Test6Li')._setProp('sublist', 'object:Test6Sublist');
+SynerJ('Test6Button')._setProp('prototype', 'object:startProto');
+SynerJ('Test6Button')._setProp('test', 'object:Test6');
+SynerJ('Test6Button')._setProp('events', NaN);
+SynerJ('Test6Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test6Sublist')._setProp('prototype', 'object:SubTestProto');
+SynerJ('Test6-newSubTest')._setProp('prototype', 'object:SubTestNewProto');
+SynerJ('Test6-newInput')._setProp('prototype', 'object:SubTestNewInputProto');
+SynerJ('Test6-newButton')._setProp('prototype', 'object:SubTestNewButtonProto');
+SynerJ('Test6-newButton')._setProp('input', 'object:Test6-newInput');
+SynerJ('Test6-newButton')._setProp('test', 'object:Test6');
+SynerJ('Test6-0Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test6-0Li')._setProp('output', 'object:Test6-0Output');
+SynerJ('Test6-0Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test6-0Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test6-1Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test6-1Li')._setProp('output', 'object:Test6-1Output');
+SynerJ('Test6-1Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test6-1Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test6-2Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test6-2Li')._setProp('output', 'object:Test6-2Output');
+SynerJ('Test6-2Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test6-2Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test6-3Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test6-3Li')._setProp('output', 'object:Test6-3Output');
+SynerJ('Test6-3Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test6-3Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test6-4Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test6-4Li')._setProp('output', 'object:Test6-4Output');
+SynerJ('Test6-4Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test6-4Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test7Li')._setProp('prototype', 'object:liProto');
+SynerJ('Test7Li')._setProp('sublist', 'object:Test7Sublist');
+SynerJ('Test7Button')._setProp('prototype', 'object:startProto');
+SynerJ('Test7Button')._setProp('test', 'object:Test7');
+SynerJ('Test7Button')._setProp('events', NaN);
+SynerJ('Test7Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test7Sublist')._setProp('prototype', 'object:SubTestProto');
+SynerJ('Test7-newSubTest')._setProp('prototype', 'object:SubTestNewProto');
+SynerJ('Test7-newInput')._setProp('prototype', 'object:SubTestNewInputProto');
+SynerJ('Test7-newButton')._setProp('prototype', 'object:SubTestNewButtonProto');
+SynerJ('Test7-newButton')._setProp('input', 'object:Test7-newInput');
+SynerJ('Test7-newButton')._setProp('test', 'object:Test7');
+SynerJ('Test7-0Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test7-0Li')._setProp('output', 'object:Test7-0Output');
+SynerJ('Test7-0Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test7-0Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test7-1Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test7-1Li')._setProp('output', 'object:Test7-1Output');
+SynerJ('Test7-1Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test7-1Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test7-2Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test7-2Li')._setProp('output', 'object:Test7-2Output');
+SynerJ('Test7-2Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test7-2Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test7-3Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test7-3Li')._setProp('output', 'object:Test7-3Output');
+SynerJ('Test7-3Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test7-3Output')._setProp('prototype', 'object:waitingProto');
+SynerJ('Test8Li')._setProp('prototype', 'object:liProto');
+SynerJ('Test8Li')._setProp('sublist', 'object:Test8Sublist');
+SynerJ('Test8Button')._setProp('prototype', 'object:startProto');
+SynerJ('Test8Button')._setProp('test', 'object:Test8');
+SynerJ('Test8Button')._setProp('events', '');
+SynerJ('Test8Output')._setProp('prototype', 'object:succeedProto');
+SynerJ('Test8Sublist')._setProp('prototype', 'object:SubTestProto');
+SynerJ('Test8-newSubTest')._setProp('prototype', 'object:SubTestNewProto');
+SynerJ('Test8-newInput')._setProp('prototype', 'object:SubTestNewInputProto');
+SynerJ('Test8-newButton')._setProp('prototype', 'object:SubTestNewButtonProto');
+SynerJ('Test8-newButton')._setProp('input', 'object:Test8-newInput');
+SynerJ('Test8-newButton')._setProp('test', 'object:Test8');
+SynerJ('Test8-newButton')._setProp('events', NaN);
+SynerJ('Test8-0Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test8-0Li')._setProp('output', 'object:Test8-0Output');
+SynerJ('Test8-0Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test8-0Output')._setProp('prototype', 'object:succeedProto');
+SynerJ('Test8-1Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test8-1Li')._setProp('output', 'object:Test8-1Output');
+SynerJ('Test8-1Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test8-1Output')._setProp('prototype', 'object:succeedProto');
+SynerJ('Test8-2Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test8-2Li')._setProp('output', 'object:Test8-2Output');
+SynerJ('Test8-2Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test8-2Output')._setProp('prototype', 'object:succeedProto');
+SynerJ('Test8-3Li')._setProp('prototype', 'object:SubTestLiProto');
+SynerJ('Test8-3Li')._setProp('output', 'object:Test8-3Output');
+SynerJ('Test8-3Tag')._setProp('prototype', 'object:SubTestTagProto');
+SynerJ('Test8-3Output')._setProp('prototype', 'object:succeedProto');
+SynerJ('actions')._setProp('prototype', 'object:liProto');
+SynerJ('newTestButton')._setProp('name', 'Test2');
+SynerJ('newTestButton')._setProp('factory', 'object:Tests');
+SynerJ('newTestButton')._setProp('jQuery16305205975940916687', '[object Object]');
+SynerJ('newTestButton')._setProp('jQuery163006964919460006058', '[object Object]');
+SynerJ('newTestButton')._setProp('jQuery16309015239235013723', '[object Object]');
+SynerJ('newTestButton')._setProp('jQuery16306831319881603122', '[object Object]');
+SynerJ('newTestButton')._setProp('jQuery16304618043939117342', '[object Object]');
+SynerJ('newTestButton')._setProp('jQuery16309060468282550573', '[object Object]');
+SynerJ('newTestButton')._setProp('jQuery163020664649992249906', '[object Object]');
+SynerJ('newTestButton')._setProp('jQuery16306629996339324862', '[object Object]');
+SynerJ('newTestButton')._setProp('jQuery163006391229410655797', '[object Object]');
+SynerJ('resetOutputs')._setProp('tests', 'object:Tests');
+SynerJ('resetOutputs')._setProp('jQuery16305205975940916687', '[object Object]');
+SynerJ('resetOutputs')._setProp('jQuery163006964919460006058', '[object Object]');
+SynerJ('resetOutputs')._setProp('jQuery16309015239235013723', '[object Object]');
+SynerJ('resetOutputs')._setProp('jQuery16306831319881603122', '[object Object]');
+SynerJ('resetOutputs')._setProp('jQuery16304618043939117342', '[object Object]');
+SynerJ('resetOutputs')._setProp('jQuery16309060468282550573', '[object Object]');
+SynerJ('resetOutputs')._setProp('jQuery163020664649992249906', '[object Object]');
+SynerJ('resetOutputs')._setProp('jQuery16306629996339324862', '[object Object]');
+SynerJ('resetOutputs')._setProp('jQuery163006391229410655797', '[object Object]');
+SynerJ('runTests')._setProp('jQuery16305205975940916687', '[object Object]');
+SynerJ('runTests')._setProp('jQuery163006964919460006058', '[object Object]');
+SynerJ('runTests')._setProp('Tests', 'object:Tests');
+SynerJ('startProto')._setProp('jQuery16305205975940916687', '[object Object]');
+SynerJ('startProto')._setProp('jQuery163006964919460006058', '[object Object]');
+SynerJ('startProto')._setProp('jQuery16309015239235013723', '[object Object]');
+SynerJ('startProto')._setProp('jQuery16306831319881603122', '[object Object]');
+SynerJ('startProto')._setProp('jQuery16304618043939117342', '[object Object]');
+SynerJ('startProto')._setProp('jQuery16309060468282550573', '[object Object]');
+SynerJ('startProto')._setProp('jQuery163020664649992249906', '[object Object]');
+SynerJ('startProto')._setProp('jQuery16306629996339324862', '[object Object]');
+SynerJ('startProto')._setProp('jQuery163006391229410655797', '[object Object]');
+SynerJ('outputProto')._setProp('failed', function (message) {
+    // set message
+    this.text("status: " + message);
+    
+    // set proto
+    var proto = this.getProp('failproto');
+    this.setProp('prototype', proto);
+});
+SynerJ('outputProto')._setProp('failproto', 'object:failProto');
+SynerJ('outputProto')._setProp('waitingproto', 'object:waitingProto');
+SynerJ('outputProto')._setProp('succeeded', function () {   
+     // set message
+    this.text("status: Succeeded");
+    
+    // set proto
+    var proto = this.getProp('succeedproto');
+    this.setProp('prototype', proto);
+});
+SynerJ('outputProto')._setProp('waiting', function () {   
+     // set message
+    this.text("status: none");
+    
+    // set proto
+    var proto = this.getProp('waitingproto');
+    this.setProp('prototype', proto);
+});
+SynerJ('outputProto')._setProp('succeedproto', 'object:succeedProto');
+SynerJ('succeedProto')._setProp('prototype', 'object:outputProto');
+SynerJ('failProto')._setProp('prototype', 'object:outputProto');
+SynerJ('waitingProto')._setProp('prototype', 'object:outputProto');
+SynerJ('SubTestProto')._setProp('prototype', 'object:SubTestProto');
+SynerJ('SubTestNewProto')._setProp('prototype', 'object:liProto');
+SynerJ('SubTestNewButtonProto')._setProp('jQuery16305205975940916687', '[object Object]');
+SynerJ('SubTestNewButtonProto')._setProp('jQuery163006964919460006058', '[object Object]');
+SynerJ('SubTestNewButtonProto')._setProp('jQuery16309015239235013723', '[object Object]');
+SynerJ('SubTestNewButtonProto')._setProp('jQuery16306831319881603122', '[object Object]');
+SynerJ('SubTestNewButtonProto')._setProp('jQuery16304618043939117342', '[object Object]');
+SynerJ('SubTestNewButtonProto')._setProp('jQuery16309060468282550573', '[object Object]');
+SynerJ('SubTestNewButtonProto')._setProp('jQuery163020664649992249906', '[object Object]');
+SynerJ('SubTestNewButtonProto')._setProp('jQuery16306629996339324862', '[object Object]');
+SynerJ('SubTestNewButtonProto')._setProp('jQuery163006391229410655797', '[object Object]');
+SynerJ('TestProto')._setProp('failed', function failed(msg) {
+    msg = msg || this.getProp('msg');
+    console.log(msg);
+    this.setProp('result', false);
+    this.setProp('msg', msg);
+});
+SynerJ('TestProto')._setProp('succeeded', function succeeded() {
+    this.setProp('result', true);
+});
+SynerJ('TestProto')._setProp('newsubtest', function (name) {
+    // create new id
+    var id = this.getProp("subtestid");
+    this.setProp("subtestid", id + 1);
+
+    // create li
+    var li = SynerJ.create({type: 'li'});
+    li.id(this.id() + "-" + id + "Li");
+    li.setProp('prototype', SynerJ('SubTestLiProto'));
+    
+    // create name
+    var tag = SynerJ.create({type: 'p'});
+    tag.id(this.id() + "-" + id + "Tag");
+    tag.text(name);
+    tag.setProp('prototype', SynerJ('SubTestTagProto'));
+
+    // create output
+    var p = SynerJ.create({type: 'p'});
+    p.id(this.id() + "-" + id + "Output");
+    p.setProp('prototype', SynerJ('outputProto'));
+    li.setProp('output', p);
+    p.call('waiting');
+
+    // create test
+    var test = SynerJ.create({type: 'none'});
+    test.id(this.id() + "-" + id);
+    test.setProp('dobject', li);
+    test.setProp('run', function () { return this.call('succeeded'); });
+
+    test.setProp('output', p);
+ 
+    test.setProp('prototype', SynerJ('TestProto'));
+    this.append(test);
+
+    // add to list
+    var list = this.getProp('dobject').getProp('sublist');
+    li.append(tag);
+    li.append(p);
+    list.append(li);
+});
+SynerJ('TestProto')._setProp('newrun', function () {
+    this.setProp('subtest', 0);
+});
+SynerJ('TestProto')._setProp('waiting', function () {
+    var subtests = this.children();
+    
+    // set output for subtest
+    for(var i=0; i<subtests.length; i++) {
+        subtests[i].call('waiting');
+    }
+    
+    // set output for test
+    var output = this.getProp('output');
+    output.call('waiting');
+});
+SynerJ('TestProto')._setProp('run', function run() {
+    var count = 0;
+    var i = 0;
+    this.call('newrun');
+    var tests = this.children();
+    
+    function runtest() {
+        if (i<tests.length) {
+            var test = tests[i++];
+            test.call('run');
+            var res = test.getProp('result');
+            if (!res)
+                count++;
+            test.call('setoutput');
+            setTimeout(runtest, 100);
+        }
+    }
+
+   runtest();
+   if (count === 0) {
+       this.call('succeeded');
+   } else {
+       this.call('failed', count + " failed");
+   }
+   this.call('setoutput');
+});
+SynerJ('TestProto')._setProp('subtest', 0);
+SynerJ('TestProto')._setProp('setoutput', function setoutput() {
+    var result = this.getProp('result');
+    var output = this.getProp('output');
+    if (result)
+        output.call('succeeded');
+    else
+        output.call('failed', this.getProp('msg'));
+});
+SynerJ('Tests')._setProp('reset', function reset() {
+    var tests = this.children();
+    for (var i=0; i<tests.length; i++) {
+        var test = tests[i];
+        console.log(test.id());
+        test.call('waiting');
+    }
+});
+SynerJ('Tests')._setProp('new', function newtest() {
+    
+    var name = this.call('newid');
+
+    this.setProp('name', name);
+    var li = SynerJ.create({type: 'li'});
+    li.id(name + "Li");
+    li.setProp('prototype', SynerJ('liProto'));
+
+    var btn = SynerJ.create({type: 'button'});
+    btn.id(name + "Button");
+    btn.setProp('prototype', SynerJ('startProto'));
+    btn.text(name);
+
+    var output = SynerJ.create({type: 'p'});
+    output.setProp('prototype', SynerJ('outputProto'));
+    output.call('waiting');
+    output.id(name + "Output");
+
+    var sublist = SynerJ.create({type: 'ul'});
+    sublist.id(name + "Sublist");
+    sublist.setProp('prototype', SynerJ('SubTestProto'));
+    li.setProp('sublist', sublist);
+
+    li.append(btn);
+    li.append(output);
+    li.append(sublist);
+    SynerJ('actions').before(li);
+
+    var test = SynerJ.create({type: 'none'});
+    test.setProp('prototype', SynerJ('TestProto'));
+    test.setProp('output', output);
+    test.setProp('dobject', li);
+    test.setProp('subtestid', 0);
+    test.id(name);
+    this.append(test);
+
+    this.call('addnewsubtest', sublist, name, test);
+    btn.setProp('test', test);
+});
+SynerJ('Tests')._setProp('name', 'Test8');
+SynerJ('Tests')._setProp('newid', function () {
+    var id = this.getProp('id');
+    this.setProp('id', id + 1);
+    return "Test" + id;
+});
+SynerJ('Tests')._setProp('id', 9);
+SynerJ('Tests')._setProp('addnewsubtest', function (list, name, test) {
+    // create li
+    var li = SynerJ.create({type: 'li'});
+    li.setProp('prototype', SynerJ('SubTestNewProto'));
+    li.id(name + "-newSubTest");
+
+    // create input
+    var input = SynerJ.create({type: 'input'});
+    input.setProp('prototype', SynerJ('SubTestNewInputProto'));
+    input.id(name + "-newInput");
+
+    // create button
+    var button = SynerJ.create({type: 'button'});
+    button.setProp('prototype', SynerJ('SubTestNewButtonProto'));
+    button.id(name + "-newButton");
+    button.text("Create New SubTest");
+    button.setProp('input', input);
+    button.setProp('test', test);
+
+    // add to list
+    li.append(input);
+    li.append(button);
+    list.append(li);
+});
+SynerJ('Tests')._setProp('run', function run() {
+    var tests = this.children();
+    var i = 0;
+    function runtest() {
+        if (i<tests.length) {
+            var test = tests[i++];
+            test.call('run');
+            setTimeout(runtest, 1000);
+        }
+    }
+    runtest();
+});
+SynerJ('Test1')._setProp('prototype', 'object:TestProto');
+SynerJ('Test1')._setProp('output', 'object:Test1Output');
+SynerJ('Test1')._setProp('dobject', 'object:Test1Li');
+SynerJ('Test1')._setProp('subtestid', 6);
+SynerJ('Test1')._setProp('subtest', 0);
+SynerJ('Test1')._setProp('result', true);
+SynerJ('Test1')._setProp('msg', '1 failed');
+SynerJ('Test1-0')._setProp('prototype', 'object:TestProto');
+SynerJ('Test1-0')._setProp('dobject', 'object:Test1-0Li');
+SynerJ('Test1-0')._setProp('output', 'object:Test1-0Output');
+SynerJ('Test1-0')._setProp('run', function run() {
+    
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check normal property
+    object.setProp('foo', 'bar');
+    var prop = object.getProp('foo');
+    if (prop != 'bar') {
+        this.call('failed', "Retrieved value isn't the same.");
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test1-0')._setProp('result', true);
+SynerJ('Test1-1')._setProp('prototype', 'object:TestProto');
+SynerJ('Test1-1')._setProp('dobject', 'object:Test1-1Li');
+SynerJ('Test1-1')._setProp('output', 'object:Test1-1Output');
+SynerJ('Test1-1')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check case sensitivity
+    object.setProp('FooBar', 'bar');
+    var prop = object.getProp('FooBar');
+    if (prop != 'bar') {
+        this.call('failed', "Retrieved value isn't the same.");
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test1-1')._setProp('result', true);
+SynerJ('Test1-2')._setProp('prototype', 'object:TestProto');
+SynerJ('Test1-2')._setProp('dobject', 'object:Test1-2Tag');
+SynerJ('Test1-2')._setProp('output', 'object:Test1-2Output');
+SynerJ('Test1-2')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check space exception
+    try {
+        object.setProp('foo bar', 'bar');
+        this.call('failed', "No error thrown.");
+    } catch (err) {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test1-2')._setProp('result', true);
+SynerJ('Test1-3')._setProp('dobject', 'object:Test1-3Li');
+SynerJ('Test1-3')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    object.setProp('foo-bar', 'bar');
+    var prop = object.getProp('foo-bar');
+    if (prop != 'bar') {
+        this.call('failed', "Retrieved value isn't the same.");
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test1-3')._setProp('output', 'object:Test1-3Output');
+SynerJ('Test1-3')._setProp('prototype', 'object:TestProto');
+SynerJ('Test1-3')._setProp('result', true);
+SynerJ('Test1-4')._setProp('dobject', 'object:Test1-4Li');
+SynerJ('Test1-4')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check space exception
+    try {
+        object.setProp('foo bar', 'bar');
+        this.call('failed', "No error thrown setting the property.");
+    } catch (err) {
+        try {
+            object.getProp('foo bar', 'bar');
+            this.call('failed', "No error thrown getting the property.");
+        } catch (err) {
+            this.call('succeeded');
+        }
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test1-4')._setProp('output', 'object:Test1-4Output');
+SynerJ('Test1-4')._setProp('prototype', 'object:TestProto');
+SynerJ('Test1-4')._setProp('result', false);
+SynerJ('Test1-4')._setProp('msg', 'No error thrown getting the property.');
+SynerJ('Test1-5')._setProp('dobject', 'object:Test1-5Li');
+SynerJ('Test1-5')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    object.setProp('foo_bar', 'bar');
+    var prop = object.getProp('foo_bar');
+    if (prop != 'bar') {
+        this.call('failed', "Retrieved value isn't the same.");
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test1-5')._setProp('output', 'object:Test1-5Output');
+SynerJ('Test1-5')._setProp('prototype', 'object:TestProto');
+SynerJ('Test1-5')._setProp('result', true);
+SynerJ('Test2')._setProp('prototype', 'object:TestProto');
+SynerJ('Test2')._setProp('output', 'object:Test2Output');
+SynerJ('Test2')._setProp('dobject', 'object:Test2Li');
+SynerJ('Test2')._setProp('subtestid', 6);
+SynerJ('Test2')._setProp('subtest', 0);
+SynerJ('Test2')._setProp('result', true);
+SynerJ('Test2')._setProp('msg', '1 failed');
+SynerJ('Test2-0')._setProp('dobject', 'object:Test2-0Li');
+SynerJ('Test2-0')._setProp('output', 'object:Test2-0Output');
+SynerJ('Test2-0')._setProp('prototype', 'object:TestProto');
+SynerJ('Test2-0')._setProp('subtest', 0);
+SynerJ('Test2-0')._setProp('run', function run() {
+    
+    // create a Dobject
+    var object = SynerJ.create({type: 'div'});
+
+    // check normal property
+    object.setProp('foo', 'bar');
+    var prop = object.getProp('foo');
+    if (prop != 'bar') {
+        this.call('failed', "Retrieved value isn't the same.");
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test2-0')._setProp('result', true);
+SynerJ('Test2-1')._setProp('dobject', 'object:Test2-1Li');
+SynerJ('Test2-1')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check case sensitivity
+    object.setProp('FooBar', 'bar');
+    var prop = object.getProp('FooBar');
+    if (prop != 'bar') {
+        this.call('failed', "Retrieved value isn't the same.");
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test2-1')._setProp('output', 'object:Test2-1Output');
+SynerJ('Test2-1')._setProp('prototype', 'object:TestProto');
+SynerJ('Test2-1')._setProp('result', true);
+SynerJ('Test2-2')._setProp('dobject', 'object:Test2-2Li');
+SynerJ('Test2-2')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check space exception
+    try {
+        object.setProp('foo bar', 'bar');
+        this.call('failed', "No error thrown.");
+    } catch (err) {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test2-2')._setProp('output', 'object:Test2-2Output');
+SynerJ('Test2-2')._setProp('prototype', 'object:TestProto');
+SynerJ('Test2-2')._setProp('result', true);
+SynerJ('Test2-3')._setProp('dobject', 'object:Test2-3Li');
+SynerJ('Test2-3')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check property
+    object.setProp('foo-bar', 'bar');
+    var prop = object.getProp('foo-bar');
+    if (prop != 'bar') {
+        this.call('failed', "Retrieved value isn't the same.");
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test2-3')._setProp('output', 'object:Test2-3Output');
+SynerJ('Test2-3')._setProp('prototype', 'object:TestProto');
+SynerJ('Test2-3')._setProp('result', true);
+SynerJ('Test2-4')._setProp('dobject', 'object:Test2-4Li');
+SynerJ('Test2-4')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check space exception
+    try {
+        object.setProp('foo bar', 'bar');
+        this.call('failed', "No error thrown setting the property.");
+    } catch (err) {
+        try {
+            object.getProp('foo bar', 'bar');
+            this.call('failed', "No error thrown getting the property.");
+        } catch (err) {
+            this.call('succeeded');
+        }
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test2-4')._setProp('output', 'object:Test2-4Output');
+SynerJ('Test2-4')._setProp('prototype', 'object:TestProto');
+SynerJ('Test2-4')._setProp('result', false);
+SynerJ('Test2-4')._setProp('msg', 'No error thrown getting the property.');
+SynerJ('Test2-5')._setProp('dobject', 'object:Test2-5Li');
+SynerJ('Test2-5')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check property
+    object.setProp('foo_bar', 'bar');
+    var prop = object.getProp('foo_bar');
+    if (prop != 'bar') {
+        this.call('failed', "Retrieved value isn't the same.");
+    } else {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test2-5')._setProp('output', 'object:Test2-5Output');
+SynerJ('Test2-5')._setProp('prototype', 'object:TestProto');
+SynerJ('Test2-5')._setProp('result', true);
+SynerJ('Test3')._setProp('prototype', 'object:TestProto');
+SynerJ('Test3')._setProp('output', 'object:Test3Output');
+SynerJ('Test3')._setProp('dobject', 'object:Test3Li');
+SynerJ('Test3')._setProp('subtestid', 6);
+SynerJ('Test3')._setProp('subtest', 0);
+SynerJ('Test3')._setProp('result', true);
+SynerJ('Test3-0')._setProp('dobject', 'object:Test3-0Li');
+SynerJ('Test3-0')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    try {
+        object.id('foo');
+        if (object.id() === 'foo') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', "Setting the id to foo failed.");
+        }
+    } catch (err) {
+        this.call('failed', "Setting the property resulted in an error.");
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test3-0')._setProp('output', 'object:Test3-0Output');
+SynerJ('Test3-0')._setProp('prototype', 'object:TestProto');
+SynerJ('Test3-0')._setProp('result', true);
+SynerJ('Test3-1')._setProp('dobject', 'object:Test3-1Li');
+SynerJ('Test3-1')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    try {
+        object.id('FooBar');
+        if (object.id() === 'FooBar') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', "Setting the id to FooBar failed.");
+        }
+    } catch (err) {
+        this.call('failed', "Setting the property resulted in an error.");
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test3-1')._setProp('output', 'object:Test3-1Output');
+SynerJ('Test3-1')._setProp('prototype', 'object:TestProto');
+SynerJ('Test3-1')._setProp('result', true);
+SynerJ('Test3-2')._setProp('dobject', 'object:Test3-2Li');
+SynerJ('Test3-2')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    try {
+        object.id('foo-2');
+        if (object.id() === 'foo-2') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', "Setting the id to foo failed.");
+        }
+    } catch (err) {
+        this.call('failed', "Setting the property resulted in an error.");
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test3-2')._setProp('output', 'object:Test3-2Output');
+SynerJ('Test3-2')._setProp('prototype', 'object:TestProto');
+SynerJ('Test3-2')._setProp('result', true);
+SynerJ('Test3-3')._setProp('dobject', 'object:Test3-3Li');
+SynerJ('Test3-3')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    try {
+        object.id('foo_2');
+        if (object.id() === 'foo_2') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', "Setting the id to foo failed.");
+        }
+    } catch (err) {
+        this.call('failed', "Setting the property resulted in an error.");
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test3-3')._setProp('output', 'object:Test3-3Output');
+SynerJ('Test3-3')._setProp('prototype', 'object:TestProto');
+SynerJ('Test3-3')._setProp('result', true);
+SynerJ('Test3-4')._setProp('dobject', 'object:Test3-4Li');
+SynerJ('Test3-4')._setProp('run', function run() {
+
+    // create 2 objects
+    var object = SynerJ.create({type: 'none'});
+    var object2 = SynerJ.create({type: 'none'});
+
+    // give them the same id
+    object.id('foo');
+    
+    try {
+        object2.id('foo');
+        this.call('failed', "No error was thrown.");
+    } catch (err) {
+        this.call('succeeded');
+    }
+
+    // remove the objects
+    SynerJ.delete(object.id());
+    SynerJ.delete(object2.id());
+
+});
+SynerJ('Test3-4')._setProp('output', 'object:Test3-4Output');
+SynerJ('Test3-4')._setProp('prototype', 'object:TestProto');
+SynerJ('Test3-4')._setProp('result', true);
+SynerJ('Test3-5')._setProp('dobject', 'object:Test3-5Li');
+SynerJ('Test3-5')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    try {
+        object.id('foo bar');
+        this.call('failed', "Setting the id to foo failed.");
+    } catch (err) {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test3-5')._setProp('output', 'object:Test3-5Output');
+SynerJ('Test3-5')._setProp('prototype', 'object:TestProto');
+SynerJ('Test3-5')._setProp('result', true);
+SynerJ('Test4')._setProp('prototype', 'object:TestProto');
+SynerJ('Test4')._setProp('output', 'object:Test4Output');
+SynerJ('Test4')._setProp('dobject', 'object:Test4Li');
+SynerJ('Test4')._setProp('subtestid', 6);
+SynerJ('Test4')._setProp('subtest', 0);
+SynerJ('Test4')._setProp('result', true);
+SynerJ('Test4-0')._setProp('dobject', 'object:Test4-0Li');
+SynerJ('Test4-0')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check property
+    try {
+        object.id('foo');
+        if (object.id() === 'foo') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', "Setting the id to foo failed.");
+        }
+    } catch (err) {
+        this.call('failed', "Setting the property resulted in an error.");
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test4-0')._setProp('output', 'object:Test4-0Output');
+SynerJ('Test4-0')._setProp('prototype', 'object:TestProto');
+SynerJ('Test4-0')._setProp('result', true);
+SynerJ('Test4-1')._setProp('dobject', 'object:Test4-1Li');
+SynerJ('Test4-1')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check property
+    try {
+        object.id('FooBar');
+        if (object.id() === 'FooBar') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', "Setting the id to FooBar failed.");
+        }
+    } catch (err) {
+        this.call('failed', "Setting the property resulted in an error.");
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test4-1')._setProp('output', 'object:Test4-1Output');
+SynerJ('Test4-1')._setProp('prototype', 'object:TestProto');
+SynerJ('Test4-1')._setProp('result', true);
+SynerJ('Test4-2')._setProp('dobject', 'object:Test4-2Li');
+SynerJ('Test4-2')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check property
+    try {
+        object.id('foo-2');
+        if (object.id() === 'foo-2') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', "Setting the id to foo failed.");
+        }
+    } catch (err) {
+        this.call('failed', "Setting the property resulted in an error.");
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test4-2')._setProp('output', 'object:Test4-2Output');
+SynerJ('Test4-2')._setProp('prototype', 'object:TestProto');
+SynerJ('Test4-2')._setProp('result', true);
+SynerJ('Test4-3')._setProp('dobject', 'object:Test4-3Li');
+SynerJ('Test4-3')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check property
+    try {
+        object.id('foo_2');
+        if (object.id() === 'foo_2') {
+            this.call('succeeded');
+        } else {
+            this.call('failed', "Setting the id to foo failed.");
+        }
+    } catch (err) {
+        this.call('failed', "Setting the property resulted in an error.");
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test4-3')._setProp('output', 'object:Test4-3Output');
+SynerJ('Test4-3')._setProp('prototype', 'object:TestProto');
+SynerJ('Test4-3')._setProp('result', true);
+SynerJ('Test4-4')._setProp('dobject', 'object:Test4-4Li');
+SynerJ('Test4-4')._setProp('run', function run() {
+
+    // create 2 objects
+    var object = SynerJ.create({type: 'div'});
+    var object2 = SynerJ.create({type: 'div'});
+
+    // give them the same id
+    object.id('foo');
+    
+    try {
+        object2.id('foo');
+        this.call('failed', "No error was thrown.");
+    } catch (err) {
+        this.call('succeeded');
+    }
+
+    // remove the objects
+    SynerJ.delete(object.id());
+    SynerJ.delete(object2.id());
+
+});
+SynerJ('Test4-4')._setProp('output', 'object:Test4-4Output');
+SynerJ('Test4-4')._setProp('prototype', 'object:TestProto');
+SynerJ('Test4-4')._setProp('result', true);
+SynerJ('Test4-5')._setProp('dobject', 'object:Test4-5Li');
+SynerJ('Test4-5')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'div'});
+
+    // check property
+    try {
+        object.id('foo bar');
+        this.call('failed', "Setting the id to foo failed.");
+    } catch (err) {
+        this.call('succeeded');
+    }
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test4-5')._setProp('output', 'object:Test4-5Output');
+SynerJ('Test4-5')._setProp('prototype', 'object:TestProto');
+SynerJ('Test4-5')._setProp('result', true);
+SynerJ('Test5')._setProp('prototype', 'object:TestProto');
+SynerJ('Test5')._setProp('output', 'object:Test5Output');
+SynerJ('Test5')._setProp('dobject', 'object:Test5Li');
+SynerJ('Test5')._setProp('subtestid', 5);
+SynerJ('Test5')._setProp('subtest', 0);
+SynerJ('Test5')._setProp('result', true);
+SynerJ('Test5-0')._setProp('dobject', 'object:Test5-0Li');
+SynerJ('Test5-0')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    object.setProp('foo', 'test');
+    var val = object.getProp('foo');
+    if (typeof val === 'string' && val === 'test')
+        this.call('succeeded');
+    else
+        this.call('failed', "Setting a string didn't result in the same string.");
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test5-0')._setProp('output', 'object:Test5-0Output');
+SynerJ('Test5-0')._setProp('prototype', 'object:TestProto');
+SynerJ('Test5-0')._setProp('result', true);
+SynerJ('Test5-1')._setProp('dobject', 'object:Test5-1Li');
+SynerJ('Test5-1')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check property
+    object.setProp('foo', 666);
+    var val = object.getProp('foo');
+    if (typeof val === 'number' && val === 666)
+        this.call('succeeded');
+    else
+        this.call('failed', "Setting a number didn't result in the same number.");
+
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test5-1')._setProp('output', 'object:Test5-1Output');
+SynerJ('Test5-1')._setProp('prototype', 'object:TestProto');
+SynerJ('Test5-1')._setProp('result', true);
+SynerJ('Test5-2')._setProp('dobject', 'object:Test5-2Li');
+SynerJ('Test5-2')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+
+    // check true 
+    object.setProp('foo', true);
+    var val = object.getProp('foo');
+    if (typeof val === 'boolean' && val === true)
+        this.call('succeeded');
+    else
+        this.call('failed', "Setting true didn't result in the boolean true.");
+
+    // check false
+    object.setProp('bar', false);
+    val = object.getProp('bar');
+    if (typeof val === 'boolean' && val === false)
+        this.call('succeeded');
+    else
+        this.call('failed', "Setting false didn't result in the boolean false.");
+        
+    // remove the object
+    SynerJ.delete(object.id());
+
+});
+SynerJ('Test5-2')._setProp('output', 'object:Test5-2Output');
+SynerJ('Test5-2')._setProp('prototype', 'object:TestProto');
+SynerJ('Test5-2')._setProp('result', true);
+SynerJ('Test5-3')._setProp('dobject', 'object:Test5-3Li');
+SynerJ('Test5-3')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+    var object2 = SynerJ.create({type: 'none'});
+
+    // check true 
+    object.setProp('foo', object2);
+    var val = object.getProp('foo');
+    if (val.equals(object2))
+        this.call('succeeded');
+    else
+        this.call('failed', "The returned object isn't the same.");
+
+    // remove the objects
+    SynerJ.delete(object.id());
+    SynerJ.delete(object2.id());
+
+});
+SynerJ('Test5-3')._setProp('output', 'object:Test5-3Output');
+SynerJ('Test5-3')._setProp('prototype', 'object:TestProto');
+SynerJ('Test5-3')._setProp('result', true);
+SynerJ('Test5-4')._setProp('dobject', 'object:Test5-4Li');
+SynerJ('Test5-4')._setProp('run', function run() {
+
+    // create a normal object
+    var object = SynerJ.create({type: 'none'});
+    var object2 = SynerJ.create({type: 'none'});
+    
+    // create array
+    var ar = ['foo', 2, true, object2];
+
+    // set array property
+    object.setProp('foo', ar);
+    var val = object.getProp('foo');
+    if (ar == val)
+        this.call('succeeded');
+    else
+        this.call('failed', "The returned value isn't the same array.");
+
+    // remove the objects
+    SynerJ.delete(object.id());
+    SynerJ.delete(object2.id());
+
+});
+SynerJ('Test5-4')._setProp('output', 'object:Test5-4Output');
+SynerJ('Test5-4')._setProp('prototype', 'object:TestProto');
+SynerJ('Test5-4')._setProp('result', true);
+SynerJ('Test6')._setProp('prototype', 'object:TestProto');
+SynerJ('Test6')._setProp('output', 'object:Test6Output');
+SynerJ('Test6')._setProp('dobject', 'object:Test6Li');
+SynerJ('Test6')._setProp('subtestid', 5);
+SynerJ('Test6')._setProp('subtest', 0);
+SynerJ('Test6')._setProp('result', true);
+SynerJ('Test6')._setProp('msg', '1 failed');
+SynerJ('Test6-0')._setProp('dobject', 'object:Test6-0Li');
+SynerJ('Test6-0')._setProp('run', function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    
+    // set parent property
+    parent.setProp('foo', 'bar');
+
+    // get property through chain
+    var val = child.getProp('foo');
+    
+    if (val === 'bar')
+        this.call('succeeded');
+    else
+        this.call('failed', "Unable to retrieve the value through the chain.");
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+});
+SynerJ('Test6-0')._setProp('output', 'object:Test6-0Output');
+SynerJ('Test6-0')._setProp('prototype', 'object:TestProto');
+SynerJ('Test6-0')._setProp('result', true);
+SynerJ('Test6-1')._setProp('dobject', 'object:Test6-1Li');
+SynerJ('Test6-1')._setProp('run', function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    var parent2 = SynerJ.create({type: 'none'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    parent.setProp('prototype', parent2);
+    
+    // set parent property
+    parent2.setProp('foo', 'bar');
+
+    // get property through chain
+    var val = child.getProp('foo');
+    
+    if (val === 'bar')
+        this.call('succeeded');
+    else
+        this.call('failed', "Unable to retrieve the value through the chain.");
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+    SynerJ.delete(parent2.id());
+
+});
+SynerJ('Test6-1')._setProp('output', 'object:Test6-1Output');
+SynerJ('Test6-1')._setProp('prototype', 'object:TestProto');
+SynerJ('Test6-1')._setProp('result', true);
+SynerJ('Test6-2')._setProp('dobject', 'object:Test6-2Li');
+SynerJ('Test6-2')._setProp('run', function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    
+    // set properties
+    parent.setProp('foo', 'bar');
+    child.setProp('foo', 'foo');
+
+    // get overriden property
+    var val = child.getProp('foo');
+    if (val == 'foo')
+        this.call('succeeded');
+    else
+        this.call('failed', "The retrieved value isn't the overridden one.");
+
+    // remove property and retrieve again
+    child.removeProp('foo');
+    val = child.getProp('foo');
+    if (val === 'bar')
+        this.call('succeeded');
+    else
+        this.call('failed', "Property was not found in the chain after deleting own.");
+        
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+});
+SynerJ('Test6-2')._setProp('output', 'object:Test6-2Output');
+SynerJ('Test6-2')._setProp('prototype', 'object:TestProto');
+SynerJ('Test6-2')._setProp('result', true);
+SynerJ('Test6-3')._setProp('dobject', 'object:Test6-3Li');
+SynerJ('Test6-3')._setProp('run', function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    parent.setProp('prototype', child);
+    
+    // get non-existent property
+    try {
+        var val = child.getProp('foo');
+        if (!val)
+            this.call('succeeded');
+    } catch (err) {
+        this.call('failed', "Error was thrown.")
+    }
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+});
+SynerJ('Test6-3')._setProp('output', 'object:Test6-3Output');
+SynerJ('Test6-3')._setProp('prototype', 'object:TestProto');
+SynerJ('Test6-3')._setProp('result', true);
+SynerJ('Test6-4')._setProp('dobject', 'object:Test6-4Li');
+SynerJ('Test6-4')._setProp('run', function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+
+    // set method for parent
+    parent.setProp('method', function (par) {
+        this.setProp('foo', par);
+    });
+    
+    // call method from child
+    try {
+        child.call('method', 'bar');
+        var val = child.getProp('foo');
+        if (val == 'bar')
+            this.call('succeeded');
+        else
+            this.call('failed', "The object doesn't contain the property set by 'this'.");
+    } catch (err) {
+        this.call('failed', "Error was thrown while calling the method.");
+    }
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+});
+SynerJ('Test6-4')._setProp('output', 'object:Test6-4Output');
+SynerJ('Test6-4')._setProp('prototype', 'object:TestProto');
+SynerJ('Test6-4')._setProp('result', true);
+SynerJ('Test6-4')._setProp('msg', 'Error was thrown while calling the method.');
+SynerJ('Test7')._setProp('prototype', 'object:TestProto');
+SynerJ('Test7')._setProp('output', 'object:Test7Output');
+SynerJ('Test7')._setProp('dobject', 'object:Test7Li');
+SynerJ('Test7')._setProp('subtestid', 5);
+SynerJ('Test7')._setProp('subtest', 0);
+SynerJ('Test7')._setProp('result', true);
+SynerJ('Test7')._setProp('msg', '1 failed');
+SynerJ('Test7-0')._setProp('dobject', 'object:Test7-0Li');
+SynerJ('Test7-0')._setProp('run', function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+
+    // set handler for parent
+    parent.bind('foo', function (e) {
+        this.setProp('foo', 'bar');
+    });
+    
+    // trigger on child
+    child.trigger('foo');
+    var val = child.getProp('foo');
+    if (val == 'bar')
+        this.call('succeeded');
+    else
+        this.call('failed', "The property set by the handler, was not found in the child object.");
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+});
+SynerJ('Test7-0')._setProp('output', 'object:Test7-0Output');
+SynerJ('Test7-0')._setProp('prototype', 'object:TestProto');
+SynerJ('Test7-0')._setProp('result', true);
+SynerJ('Test7-0')._setProp('msg', 'The property set by the handler, was not found in the child object.');
+SynerJ('Test7-1')._setProp('dobject', 'object:Test7-1Li');
+SynerJ('Test7-1')._setProp('run', function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    
+    // set handler for parent
+    parent.bind('foo', function (e) {
+        this.setProp('foo', 'bar');
+    });
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    
+    // trigger on child
+    child.trigger('foo');
+    var val = child.getProp('foo');
+    if (val == 'bar')
+        this.call('succeeded');
+    else
+        this.call('failed', "The property set by the handler, was not found in the child object.");
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+});
+SynerJ('Test7-1')._setProp('output', 'object:Test7-1Output');
+SynerJ('Test7-1')._setProp('prototype', 'object:TestProto');
+SynerJ('Test7-1')._setProp('result', true);
+SynerJ('Test7-1')._setProp('msg', 'Error was thrown while calling the method.');
+SynerJ('Test7-2')._setProp('dobject', 'object:Test7-2Li');
+SynerJ('Test7-2')._setProp('run', function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    parent.setProp('prototype', child);
+    
+    // set handler for parent
+    parent.bind('foo', function (e) {
+        this.setProp('foo', 'bar');
+    });
+    
+    parent.unbind('foo');
+    
+    // trigger on child
+    try {
+        child.trigger('foo');
+        this.call('succeeded');
+    } catch (err) {
+        this.call('failed', "Triggering the event threw an error.");
+    }
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+});
+SynerJ('Test7-2')._setProp('output', 'object:Test7-2Output');
+SynerJ('Test7-2')._setProp('prototype', 'object:TestProto');
+SynerJ('Test7-2')._setProp('result', true);
+SynerJ('Test7-2')._setProp('msg', 'The property set by the handler, was not found in the child object.');
+SynerJ('Test7-3')._setProp('dobject', 'object:Test7-3Li');
+SynerJ('Test7-3')._setProp('run', function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'none'});
+    var parent = SynerJ.create({type: 'none'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    
+    // set handler for parent
+    parent.bind('foo', function (e) {
+        this.setProp('foo', 'bar');
+    });
+    
+    // 'override' event for child
+    child.bind('foo', function (e) {
+        this.setProp('foo', 'foo');
+    });
+        
+    // trigger on child
+    try {
+        child.trigger('foo');
+        var val = child.getProp('foo');
+        if (val == 'foo')
+            this.call('succeeded');
+        else
+            this.call('failed', "The event was not overridden.");
+    } catch (err) {
+        this.call('failed', "Triggering the event threw an error.");
+    }
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+});
+SynerJ('Test7-3')._setProp('output', 'object:Test7-3Output');
+SynerJ('Test7-3')._setProp('prototype', 'object:TestProto');
+SynerJ('Test7-3')._setProp('result', true);
+SynerJ('Test8')._setProp('prototype', 'object:TestProto');
+SynerJ('Test8')._setProp('output', 'object:Test8Output');
+SynerJ('Test8')._setProp('dobject', 'object:Test8Li');
+SynerJ('Test8')._setProp('subtestid', 4);
+SynerJ('Test8')._setProp('subtest', 0);
+SynerJ('Test8')._setProp('result', true);
+SynerJ('Test8')._setProp('msg', '1 failed');
+SynerJ('Test8-0')._setProp('dobject', 'object:Test8-0Li');
+SynerJ('Test8-0')._setProp('run', function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'div'});
+    var parent = SynerJ.create({type: 'div'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    
+    // set style for parent
+    parent.setCss('width', '200px');
+        
+    // get style for child
+    var val = child.getCss('width');
+    if (val == '200px')
+        this.call('succeeded');
+    else
+        this.call('failed', "The style was not inherited.");
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+});
+SynerJ('Test8-0')._setProp('output', 'object:Test8-0Output');
+SynerJ('Test8-0')._setProp('prototype', 'object:TestProto');
+SynerJ('Test8-0')._setProp('result', true);
+SynerJ('Test8-1')._setProp('dobject', 'object:Test8-1Li');
+SynerJ('Test8-1')._setProp('run', function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'div'});
+    var parent = SynerJ.create({type: 'div'});
+    var parent2 = SynerJ.create({type: 'div'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    parent.setProp('prototype', parent2);
+    
+    // set style for parent
+    parent2.setCss('width', '200px');
+        
+    // get style for child
+    var val = child.getCss('width');
+    
+    if (val == '200px')
+        this.call('succeeded');
+    else
+        this.call('failed', "The style was not inherited.");
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+    SynerJ.delete(parent2.id());
+
+});
+SynerJ('Test8-1')._setProp('output', 'object:Test8-1Output');
+SynerJ('Test8-1')._setProp('prototype', 'object:TestProto');
+SynerJ('Test8-1')._setProp('result', true);
+SynerJ('Test8-1')._setProp('msg', 'The style was not inherited.');
+SynerJ('Test8-1')._setProp('val', '200px');
+SynerJ('Test8-2')._setProp('dobject', 'object:Test8-2Li');
+SynerJ('Test8-2')._setProp('run', function run() {
+
+    // create objects
+    var child = SynerJ.create({type: 'div'});
+    var parent = SynerJ.create({type: 'div'});
+    
+    // set up chain
+    child.setProp('prototype', parent);
+    
+    // set style for parent
+    parent.setCss('width', '200px');
+    
+    // override for child
+    child.setCss('width', '400px');
+    
+    // remove overridden value
+    child.removeCss('width');
+        
+    // get style for child
+    var val = child.getCss('width');
+
+    if (val == '200px')
+        this.call('succeeded');
+    else
+        this.call('failed', "The style was not properly inherited. Returned: " + val + ", 200px expected.");
+
+    // remove the objects
+    SynerJ.delete(child.id());
+    SynerJ.delete(parent.id());
+
+});
+SynerJ('Test8-2')._setProp('output', 'object:Test8-2Output');
+SynerJ('Test8-2')._setProp('prototype', 'object:TestProto');
+SynerJ('Test8-2')._setProp('result', true);
+SynerJ('Test8-2')._setProp('msg', 'The style was not properly inherited. Returned: , 200px expected.');
+SynerJ('Test8-3')._setProp('dobject', 'object:Test8-3Li');
+SynerJ('Test8-3')._setProp('run', function () { return this.call('succeeded'); });
+SynerJ('Test8-3')._setProp('output', 'object:Test8-3Output');
+SynerJ('Test8-3')._setProp('prototype', 'object:TestProto');
+SynerJ('Test8-3')._setProp('result', true);

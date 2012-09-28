@@ -20,17 +20,17 @@ public/css/*
 
 public/export
 
-!public/html/tests.html
-!public/js/tests.js
-!public/css/tests.css
+!public/html/tests.*
+!public/js/tests.*
+!public/css/tests.*
 
-!public/html/car.html
-!public/js/car.js
-!public/css/car.css
+!public/html/car.*
+!public/js/car.*
+!public/css/car.*
 
-!public/html/default.html
-!public/js/default.js
-!public/css/default.css
+!public/html/default.*
+!public/js/default.*
+!public/css/default.*
 
 !public/css/images
 
