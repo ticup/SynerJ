@@ -33,7 +33,7 @@
        "socket.io"      : ">=0.9.10",
        "node-proxy"     : ">=0.5.2",
        "node-static"    : ">=0.6.1",
-       "node-native-zip": ">=1.1.0"
+       "node-zip"       : ">=0.0.1"
       },
     "devDependencies": {
        "should"     : ">=1.1.0",
