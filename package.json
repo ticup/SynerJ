@@ -1,7 +1,7 @@
 {
     "name": "SynerJ",
     "version": "0.1.0",
-    "description": "Live Interactive web app IDE",
+    "description": "A Live Graphical In-Browser Web App Framework",
     "keywords": [
       "SynerJ"
     ],
@@ -16,7 +16,7 @@
     "licenses": [
         {
             "type": "MIT",
-            "url": "http://github.com/tmpvar/jsdom/blob/master/LICENSE.txt"
+            "url": "http://github.com/Acek/SynerJ/master/LICENSE.txt"
         }
     ],
     "repositories": [
