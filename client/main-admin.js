@@ -47,16 +47,11 @@ require(["jquery", "SynerJ", "Mode", "Inspector",
   SynerJ.Evaluator = new Evaluator();
   SynerJ.Mode = new Mode(SynerJ);
   SynerJ.Menu = new Menu(SynerJ.Inspector, SynerJ.Evaluator, SynerJ.Mode);
-  SynerJ.Mode.application();
   
   var installProperties = require(propsLink);
   var parent = SynerJ(SynerJ.objectsParent);
 
   $(function () {
-    // shared inputs
-    $('input, textarea:not(.native)').live('change', function (e) {
-      if (!$(this).hasClass('native'))
-        SynerJ($(this).attr('id')).setAttr('value', $(this).val());
-    });
+      SynerJ.Mode.application();
   });
 });

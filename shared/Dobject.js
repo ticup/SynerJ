@@ -121,7 +121,7 @@ define(['sDobject.core'], function (Dobject) {
   Dobject.prototype.attr = function (name, val) {
     if (typeof val === 'undefined')
       return this._attr(name);
-    this.SynerJ.sync('setAttr', { id: this.id(), name: name, val: val });
+    this.SynerJ.sync('attr', { id: this.id(), name: name, val: val });
   };
   
   // removeAttr

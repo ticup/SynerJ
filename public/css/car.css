@@ -3,12 +3,12 @@ Dobject-0 {}
 .wheelProto {background-color: blue; height: 25px; width: 25px; position: absolute;}
 #wheelProto {background-color: blue; height: 25px; width: 25px; position: absolute;}
 .bodyProto {}
-#car {left: 100px; top: 100px; width: 50px; height: 75px; position: absolute;}
-.car {left: 100px; top: 100px; width: 50px; height: 75px;}
+#car {left: 241px; top: 224px; width: 75px; height: 50px; position: absolute;}
+.car {left: 241px; top: 224px; width: 75px; height: 50px;}
 .car {background-color: red; width: 50px; height: 75px;}
 .car {background-color: red;}
-#sirene {top: 33px; left: 20px; background-color: green; width: 10px; height: 10px; position: absolute;}
-.sirene {left: 20px; top: 33px; background-color: green; height: 10px; width: 10px; position: absolute;}
+#sirene {top: 20px; left: 33px; background-color: red; width: 10px; height: 10px; position: absolute;}
+.sirene {left: 33px; top: 20px; background-color: red; height: 10px; width: 10px; position: absolute;}
 .Dobject-13 {height: 25px; position: absolute; left: -10px; top: 6px; background-color: blue; width: 25px;}
 .Dobject-13 {background-color: blue; height: 25px; width: 25px; position: absolute;}
 .Dobject-14 {height: 25px; position: absolute; left: 37px; top: 45px; background-color: blue; width: 25px;}
@@ -20,8 +20,8 @@ Dobject-0 {}
 .Dobject-17 {position: absolute; left: 80px; top: 636px;}
 #start {left: 0px; top: 1px;}
 .start {left: 0px; top: 1px;}
-#toolbar {position: absolute; left: 24px; top: 690px;}
-.toolbar {position: absolute; left: 24px; top: 690px;}
+#toolbar {position: absolute; left: 19px; top: 690px;}
+.toolbar {position: absolute; left: 19px; top: 690px;}
 #carProto {width: 50; height: 75px;}
 #red {background-color: green;}
 .red {background-color: green;}
@@ -29,11 +29,13 @@ Dobject-0 {}
 .green {background-color: green;}
 .carProto {background-color: green;}
 .carProto {background-color: red;}
-#wheel1 {left: -10px; top: 6px;}
-#wheel2 {left: 37px; top: 45px;}
-#wheel3 {left: -10px; top: 45px;}
-#wheel4 {left: 36px; top: 5px;}
-.wheel1 {top: 6px; left: -10px; width: 25px; height: 25px; background-color: blue; position: absolute;}
-.wheel2 {top: 45px; left: 37px; width: 25px; height: 25px; background-color: blue; position: absolute;}
-.wheel3 {top: 45px; left: -10px; width: 25px; height: 25px; background-color: blue; position: absolute;}
-.wheel4 {top: 5px; left: 36px; width: 25px; height: 25px; background-color: blue; position: absolute;}
+#wheel1 {left: 6px; top: -10px;}
+#wheel2 {left: 45px; top: 37px;}
+#wheel3 {left: 46px; top: -10px;}
+#wheel4 {left: 5px; top: 36px;}
+.wheel1 {top: -10px; left: 6px; position: absolute; width: 25px; background-color: blue; height: 25px;}
+.wheel2 {top: 37px; left: 45px; position: absolute; width: 25px; background-color: blue; height: 25px;}
+.wheel3 {top: -10px; left: 46px; position: absolute; width: 25px; background-color: blue; height: 25px;}
+.wheel4 {top: 36px; left: 5px; position: absolute; width: 25px; background-color: blue; height: 25px;}
+#x-input {left: 114px; top: 28px;}
+.x-input {left: 114px; top: 28px;}

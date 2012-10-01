@@ -40,10 +40,6 @@ define(["jquery", "SynerJ", "require", "Mode", "sox", propsLink],
   SynerJ.Mode.application();
 
   $(function () {
-    // shared inputs
-    $('input, textarea:not(.native)').live('change', function (e) {
-      if (!$(this).hasClass('native'))
-        SynerJ($(this).attr('id')).setAttr('value', $(this).val());
-    });
+    SynerJ.Mode.application();
   });
 });

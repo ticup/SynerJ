@@ -5,7 +5,7 @@
 // Author: Tim Coppieters
 // Date: february 2012
 
-define(['config', 'jqueryui/draggable'], function (config) {
+define(['config', 'jquery', 'jqueryui/draggable'], function (config, $) {
 
   var Mode = (function () {
 
@@ -66,6 +66,8 @@ define(['config', 'jqueryui/draggable'], function (config) {
       SynerJ._treeWalk(parent, function (obj) {
         obj.jqEl.removeAttr('style');
       });
+
+      this.syncInputs();
     };
 
 
@@ -98,6 +100,16 @@ define(['config', 'jqueryui/draggable'], function (config) {
       SynerJ._treeWalk(parent, function (obj) {
         disableDrag(obj);
         bindHandlers(obj);
+      });
+
+      this.syncInputs();
+    };
+
+    // Make input's and textarea's synchronized
+    Mode.prototype.syncInputs = function () {
+      var SynerJ = this.SynerJ;
+      $('input, textarea:not(.native)').live('change', function (e) {
+        SynerJ($(this).attr('id')).attr('value', $(this).val());
       });
     };
 
