@@ -108,8 +108,10 @@ define(['config', 'jquery', 'jqueryui/draggable'], function (config, $) {
     // Make input's and textarea's synchronized
     Mode.prototype.syncInputs = function () {
       var SynerJ = this.SynerJ;
-      $('input, textarea:not(.native)').live('change', function (e) {
-        SynerJ($(this).attr('id')).attr('value', $(this).val());
+      $('#' + config.objectsParent + ' input, textarea').live('change', function (e) {
+        if (!$(this).hasClass('native')) {
+          SynerJ($(this).attr('id')).attr('value', $(this).val());
+        }
       });
     };
 

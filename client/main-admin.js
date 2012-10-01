@@ -52,6 +52,6 @@ require(["jquery", "SynerJ", "Mode", "Inspector",
   var parent = SynerJ(SynerJ.objectsParent);
 
   $(function () {
-      SynerJ.Mode.application();
+    SynerJ.Mode.application();
   });
 });
