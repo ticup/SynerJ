@@ -21,5 +21,4 @@ SynerJ('wheel3')._setProp('prototype', 'object:wheelProto');
 SynerJ('wheel4')._setProp('prototype', 'object:wheelProto');
 SynerJ('wheelProto')._setProp('prototype', undefined);
 SynerJ('carProto')._setProp('prototype', 'object:green');
-SynerJ('red')._setProp('prototype', undefined);
 SynerJ('green')._setProp('prototype', undefined);

@@ -224,6 +224,8 @@ define(['sConfig'], function (config) {
         checkForCycle(this, val);
         var id = val.id();
         // update css accordingly to new prototype
+        addRules(this, this.SynerJ.document);
+        addRules(val, this.SynerJ.document);
         removeInheritCss(this);
         this.jqEl.attr('class', id);
         inheritCss(this, val);
@@ -636,12 +638,15 @@ define(['sConfig'], function (config) {
     }
 
     // updateCss: updates the CSSOM object so it has the correct id
-    // This must be executed after the object has changed its id
+    // This must be executed before the object has changed its id
     function updateCss(obj, id) {
-        var oname = "#" + obj.id();
-        var nname = "#" + id;
-        var doc = obj.SynerJ.document;
-        renameRule(doc, oname, nname);
+      var oname = "#" + obj.id();
+      var nname = "#" + id;
+      var doc = obj.SynerJ.document;
+      renameRule(doc, oname, nname);
+      oname = "." + obj.id();
+      nname = "." + id;
+      renameRule(doc, oname, nname);
     }
     
     // propagateCss: updates the objects that have this object as prototype.
@@ -662,7 +667,7 @@ define(['sConfig'], function (config) {
       });
     }
 
-    // checkForCycle: checks if setting this prototype makes an cyclic chain.
+    // checkForCycle: checks if setting this prototype makes a cyclic chain.
     function checkForCycle(obj, proto) {
       var visited = [];
       var curr = proto;
@@ -725,15 +730,17 @@ define(['sConfig'], function (config) {
       var sheet = document.styleSheets[1];
       var rules = sheet.cssRules;
 			for (var i = 0; i<rules.length; i++) {
+        console.log(rules[i].cssText);
         if (rules[i].selectorText.toLowerCase() == oldName) {
           var style = rules[i].style;
           var rule = nname;
           if (style.cssText)
             rule += " { " + style.cssText + " } ";
           else
-            rule += style.toString();
+            rule += " { } ";
+          console.log('inserting rule: ' + rule);
           sheet.deleteRule ? sheet.deleteRule(i) : sheet.removeRule(i);
-			    sheet.insertRule ? sheet.insertRule(rule, rules.length) : sheet.addRule(rule, rules.length);
+          sheet.insertRule ? sheet.insertRule(rule, rules.length) : sheet.addRule(rule, rules.length);
         }
       }
     }
@@ -776,13 +783,8 @@ define(['sConfig'], function (config) {
 			if (style)
 				return style;
 			// otherwise add a rule which includes the style.
-			if (sheet.insertRule)
-				sheet.insertRule(rule, rules.length);
-			else if (sheet.addRule)
-				sheet.addRule(rule, rules.length);
-			else
-				throw new Error("Browser doesn't support adding rules");
-			return findStyle(document, name);
+  		addRule(sheet, rule);
+      return findStyle(document, name);
 		}
 
     // removeInheritCss: Remove the style inherited through the prototype.
@@ -810,6 +812,35 @@ define(['sConfig'], function (config) {
           }
         }
     }
+
+    // addRules
+    function addRules(obj, document) {
+      var id = obj._id();
+      var sheet = document.styleSheets[1];
+      var style = findStyle(document, "#" + id);
+      var rule = "#" + id +"{}";
+      if (!style) {
+        addRule(sheet, rule);
+      }
+      style = findStyle(document, "." + id);
+      rule = "." + id +"{}";
+      if (!style) {
+        addRule(sheet, rule);
+      }
+    }
+
+    // addRule
+    function addRule(sheet, rule) {
+      console.log('adding rule: ' + rule);
+      var rules = sheet.cssRules;
+      if (sheet.insertRule)
+        sheet.insertRule(rule, rules.length);
+      else if (sheet.addRule)
+        sheet.addRule(rule, rules.length);
+      else
+        throw new Error("Browser doesn't support adding rules");
+    }
+
     return Dobject;
 	})();
   return Dobject;
