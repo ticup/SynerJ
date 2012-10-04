@@ -738,7 +738,6 @@ define(['sConfig'], function (config) {
             rule += " { " + style.cssText + " } ";
           else
             rule += " { } ";
-          console.log('inserting rule: ' + rule);
           sheet.deleteRule ? sheet.deleteRule(i) : sheet.removeRule(i);
           sheet.insertRule ? sheet.insertRule(rule, rules.length) : sheet.addRule(rule, rules.length);
         }
@@ -783,7 +782,7 @@ define(['sConfig'], function (config) {
 			if (style)
 				return style;
 			// otherwise add a rule which includes the style.
-  		addRule(sheet, rule);
+      addRule(sheet, rule);
       return findStyle(document, name);
 		}
 
@@ -831,7 +830,6 @@ define(['sConfig'], function (config) {
 
     // addRule
     function addRule(sheet, rule) {
-      console.log('adding rule: ' + rule);
       var rules = sheet.cssRules;
       if (sheet.insertRule)
         sheet.insertRule(rule, rules.length);
