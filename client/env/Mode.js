@@ -37,25 +37,6 @@ define(['config', 'jquery', 'jqueryui/draggable'], function (config, $) {
       // get the parent of all the Dobjects
       var parent = SynerJ(config.DobjectsParent);
 
-      // remove all the current active eventHandlers from the Dobject
-      function unbindHandlers(obj) {
-        var events = obj.jqEl.data('events');
-        for (var name in events)
-          obj.jqEl.unbind(name);
-      }
-
-      // make the Dobject draggable
-      function enableDrag(obj) {
-        obj.jqEl.draggable({
-          cancel: false,
-          drag: function (e, ui) {
-            var left = ui.position.left;
-            var top = ui.position.top;
-            obj.setCss('left', left + "px");
-            obj.setCss('top', top + "px");
-          } });
-      }
-
       // do this for all Dobjects
       SynerJ._treeWalk(parent, function (obj) {
         unbindHandlers(obj);
@@ -64,12 +45,40 @@ define(['config', 'jquery', 'jqueryui/draggable'], function (config, $) {
 
       // fix style=relative of .draggable
       SynerJ._treeWalk(parent, function (obj) {
-        obj.jqEl.removeAttr('style');
+        removejQueryStyle(obj);
       });
 
       this.syncInputs();
     };
 
+    // remove all the current active eventHandlers from the Dobject
+    function unbindHandlers(obj) {
+      var events = obj.jqEl.data('events');
+      for (var name in events)
+        obj.jqEl.unbind(name);
+    }
+
+    // make the Dobject draggable
+    function enableDrag(obj) {
+      obj.jqEl.draggable({
+        cancel: false,
+        drag: function (e, ui) {
+          var left = ui.position.left;
+          var top = ui.position.top;
+          obj.setCss('left', left + "px");
+          obj.setCss('top', top + "px");
+        } });
+    }
+
+    function removejQueryStyle(obj) {
+      obj.jqEl.removeAttr('style');
+    }
+
+    Mode.prototype.makeDraggable = function (obj) {
+      unbindHandlers(obj);
+      enableDrag(obj);
+      removejQueryStyle(obj);
+    };
 
     // Set the environment in application mode: all objects have their normal event handlers
     // again.

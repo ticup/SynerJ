@@ -133,7 +133,7 @@ define(['sConfig'], function (config) {
        }
        // clone properties
        this._forEachProp(function (nam, val) {
-         obj[nam] = val;
+         obj._setProp(nam, val);
        });
 
       // clone css properties

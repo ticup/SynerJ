@@ -1,4 +1,5 @@
 define(['sDobject'], function (Dobject) {
+
   // setProp: if the new property is a new prototype, then set up the prototype chain
   // to listen to the correct events (according to the new prototype).
   Dobject.prototype._setProp = (function () {
@@ -20,7 +21,7 @@ define(['sDobject'], function (Dobject) {
   // as a string (because on the client-side we are only interested in the string representation
   // of the function) and we set up a pass-to-server-listener for the event.
   Dobject.prototype._bind = function _bind(event, handler) {
-    // we only allow 1 handler per event
+    // only 1 handler allowed per event
     this._unbind(event);
     // save the string representation
     this.SynerJ._addHandler(this.id(), event, handler);

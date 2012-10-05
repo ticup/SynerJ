@@ -100,6 +100,10 @@ define(['sEventHandlers', 'SynerJ'], function (eventHandlers, SynerJ) {
   eventHandlers.addAfterSharedEvent('create', function (data, SynerJ) {
     if (SynerJ.Inspector)
       SynerJ.Inspector.addNode(data.id, data.parentId);
+    if (SynerJ.Mode.isDevelopment()) {
+      console.log('making draggable: ' + data.id);
+      SynerJ.Mode.makeDraggable(SynerJ(data.id));
+    }
   });
 	
   eventHandlers.addAfterSharedEvent('delete', function (data, SynerJ) {
