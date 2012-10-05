@@ -121,19 +121,15 @@ select, input, textarea, button { font:99% sans-serif; }
 }
 
 #ACEditorWrapper {
-  z-index: 10000;
-  position: absolute;
-  padding: 5px;
-  background-color: white;
-  border: 2px solid grey;
+  overflow: hidden;
 }
 
 #ACEditor {
-  z-index: 1000000;
-  position: relative;
-  width: 800px;
-  height: 600px;
+  overflow: scroll;
+  width: 802px;
+  height: 657px;
 }
+
 /* Inspector */
 #Inspector .actions {
   padding-top: 3px;

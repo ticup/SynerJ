@@ -55,8 +55,8 @@ define(['order!jquery',
           evaluator.textarea.css('height', height - 180);
           evaluator.editor.resize();
 
-          evaluator.output.css('width', width - 25);
-          evaluator.output.css('margin-top', height - 125);
+          evaluator.output.css('width', width - 30);
+          evaluator.output.css('margin-top', height - 165);
         }
       });
     };

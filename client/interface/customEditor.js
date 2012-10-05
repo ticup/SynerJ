@@ -9,7 +9,7 @@
 // Author: Tim Coppieters
 // Date: September 2011
 
-define(['require', 'jquery', 'SynerJ', 'ace/ace', 'ace/mode/javascript'],
+define(['require', 'jquery', 'SynerJ', 'ace/ace', 'ace/mode/javascript', 'jqueryui/dialog'],
   function (require, $, SynerJ, ace, aceJS) {
   
   // custom editor for SlickGrid that uses other editing
@@ -45,6 +45,31 @@ define(['require', 'jquery', 'SynerJ', 'ace/ace', 'ace/mode/javascript'],
 
         type = 'function';
         $main = $wrapper;
+
+        // set up dialog
+        $main.dialog();
+        $main.dialog({
+          title: args.item[0],
+          width: 800,
+          height: 600,
+          open: function(event, ui) {
+            var width = $main.dialog('option', 'width');
+            var width = $main.dialog('option', 'height');
+            $input.css('width', width + 2);
+            $input.css('height', height - 43);
+            editor.resize();
+          },
+          resizeStop: function (event, ui) {
+            var width = $main.dialog('option', 'width');
+            var height = $main.dialog('option', 'height');
+            var cWidth = parseInt($input.css('width'));
+            var cHeight = parseInt($input.css('height'));
+
+            $input.css('width', width + 2);
+            $input.css('height', height - 43);
+            editor.resize();
+          }
+        });
 
 
         // attribute as input => input
@@ -102,10 +127,10 @@ define(['require', 'jquery', 'SynerJ', 'ace/ace', 'ace/mode/javascript'],
     };
 
     this.position = function(position) {
-      if(type === 'function')
-        $wrapper
-            .css("top", position.top - 5)
-            .css("left", position.left - 5);
+      // if(type === 'function')
+      //   $main 
+      //       .css("top", position.top - 5)
+      //       .css("left", position.left - 5);
     };
 
     this.destroy = function() {
