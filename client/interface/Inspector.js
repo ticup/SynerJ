@@ -33,7 +33,7 @@ define(['config',
     
     // show
 		Inspector.prototype.show = function () {
-      this.jqContainer.dialog({height: 500, width: 300, title: 'Inspector'});
+      this.jqContainer.dialog({height: 500, width: 325, title: 'Inspector'});
     };
 	  
     // hide
