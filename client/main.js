@@ -24,6 +24,7 @@ require.config({
     eventHandlers: '../client/env/eventHandlers',
     sox: '../client/env/sox',
   // misc
+    css: '../shared/css',
     sConfig: '../shared/config',
     config: '../client/config'
 	},

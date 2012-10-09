@@ -30,6 +30,7 @@ require.config({
     Editor: '../client/interface/Editor',
     customEditor: '../client/interface/customEditor',
   // misc
+    css: '../shared/css',
     sConfig: '../shared/config',
     config: '../client/config'
 	},

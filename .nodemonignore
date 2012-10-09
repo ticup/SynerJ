@@ -1,0 +1,3 @@
+# excludes folders for nodemon (used for ci testing)
+
+/public/*

@@ -17,18 +17,18 @@ define(['sEventHandlers', 'SynerJ'], function (eventHandlers, SynerJ) {
     // add the shared handlers
     for (var event in sEvents) {
 			var sHandler = sEvents[event];
-			var asHandler = asEvents[event]; 
+			var asHandler = asEvents[event];
 			addSharedEventHandler(socket, event, sHandler, asHandler);
 		}
     // add the client specific handlers
     for (var event in cEvents) {
       var handler = cEvents[event];
-      addEventHandler(socket, event, handler);  
+      addEventHandler(socket, event, handler);
     }
 	};
 
   // addEventHandler: listen for given event and execute the server's callback
-  // with the result of the handler. 
+  // with the result of the handler.
   function addEventHandler(socket, event, handler) {
     socket.on(event, function (data, callback) {
       var res = handler(data, SynerJ);
@@ -44,14 +44,14 @@ define(['sEventHandlers', 'SynerJ'], function (eventHandlers, SynerJ) {
 				// exevute shared code
         var exec = sHandler(data, SynerJ);
         var res = exec("_" + event);
-				// execute client specific code. 
+				// execute client specific code.
         if (cHandler)
 					cHandler(data, SynerJ);
         // execute the server's callback if there is any.
         if (callback)
           callback(res);
 		});
-	};
+	}
 
   
   // clientEvents: client specific event handlers.

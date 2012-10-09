@@ -22,7 +22,8 @@ define.config({
 		scripts: 'server/scripts',
 		Page: 'server/Page',
 		sox: 'server/sox',
-		Sockets: 'server/Sockets'
+		Sockets: 'server/Sockets',
+		css: '../shared/css',
 	}
 });
 
@@ -144,6 +145,10 @@ define(['Page'], function (Page) {
 			});
 
 
+/////////////////
+// Properties //
+///////////////
+
 describe('._prop(name)', function () {
 	it('should return the value of the data property', function () {
 		obj.jqEl.data('foo', 'bar');
@@ -239,6 +244,10 @@ describe('._forEachProp(name)', function () {
 
 
 
+////////////////
+//Attributes //
+//////////////
+
 describe('._attr(name)', function () {
 	it('should return the value of the attribute', function () {
 		obj.jqEl.attr('foo', 'bar');
@@ -313,6 +322,9 @@ describe('._removeAttr(name)', function () {
 });
 
 
+////////////////////////
+// Tree manipulation //
+//////////////////////
 
 describe('._append(child)', function () {
 	var res;
@@ -506,10 +518,13 @@ describe('._getInherits()', function () {
 
     describe('._trigger(event)', function () {
     	it('should trigger the event with this pointing to the object', function () {
-    		var div = SynerJ.create({type: 'div'});
-    		div._bind('click', function () { this.foo = 'bar'; });
+    		var div = SynerJ.create({id: 'fooTest9', type: 'div'});
+    		div._bind('click', function () {
+    			this.foo = 'bar';
+    			this.equals(SynerJ('fooTest9')).should.be.true
+    		});
     		div._trigger('click');
-    		should.equal(this.foo, 'bar');
+    		should.equal(div.foo, 'bar');
     	});
     });
 

@@ -82,25 +82,25 @@ define(['Page'], function (Page) {
 					done();
 				});
 
-				// this used to be a bug
-				it('should rename the 2 rules when the Dobject is renamed', function (done) {
-					var obj2 = SynerJ.create();
-					var obj3 = SynerJ.create();
-					obj2.setProp('prototype', obj3);
-					var id2 = obj2.id();
-					var id3 = obj3.id();
-					var newID = 'newID2';
-					obj2.id(newID);
-					var counts = getRuleCount(page, id2);
-					counts.classRuleCount.should.equal(0);
-					counts.idRuleCount.should.equal(0);
-					counts = getRuleCount(page, id3);
-					counts.classRuleCount.should.equal(1);
-					counts.idRuleCount.should.equal(1);
-					counts = getRuleCount(page, newID);
-					counts.classRuleCount.should.equal(1);
-					counts.idRuleCount.should.equal(1);
-					done();
+				it('should rename the 2 rules when the Dobject is renamed (/w prototype and no rules)',
+					function (done) {
+						var obj2 = SynerJ.create();
+						var obj3 = SynerJ.create();
+						obj2.setProp('prototype', obj3);
+						var id2 = obj2.id();
+						var id3 = obj3.id();
+						var newID = 'newID2';
+						obj2.id(newID);
+						var counts = getRuleCount(page, id2);
+						counts.classRuleCount.should.equal(0);
+						counts.idRuleCount.should.equal(0);
+						counts = getRuleCount(page, id3);
+						counts.classRuleCount.should.equal(1);
+						counts.idRuleCount.should.equal(1);
+						counts = getRuleCount(page, newID);
+						counts.classRuleCount.should.equal(1);
+						counts.idRuleCount.should.equal(1);
+						done();
 				});
 
 				it('should remove the 2 rules when the Dobject is deleted', function (done) {
@@ -150,6 +150,18 @@ define(['Page'], function (Page) {
 						}, true);
 					});
 				});
+
+				it('should add the css to the id rule when css is set', function (done) {
+					var obj = SynerJ.create();
+					obj.setCss('width', '200px');
+					var id = obj.id();
+					var counts = getRuleCount(page, id);
+					counts.classRuleCount.should.equal(1);
+					counts.idRuleCount.should.equal(1);
+					page.window.SynerJ.delete(obj);
+					done();
+				});
+
 			});
 		});
 	}, false);

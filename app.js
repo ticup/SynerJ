@@ -9,7 +9,6 @@ define.config({
     'sDobject.core': '../shared/Dobject.core',
     sSynerJ: '../shared/SynerJ',
     'sSynerJ.core': '../shared/SynerJ.core',
-    sConfig: '../shared/config',
     sEventHandlers: '../shared/eventHandlers',
   // server env code
     Dobject: 'env/Dobject',
@@ -22,7 +21,10 @@ define.config({
     scripts: 'server/scripts',
     Page: 'server/Page',
     sox: 'server/sox',
-    Sockets: 'server/Sockets'
+    Sockets: 'server/Sockets',
+  // misc
+    css: '../shared/css',
+    sConfig: '../shared/config'
     }
 });
 

@@ -1,7 +1,7 @@
 .wheelProto {background-color: blue; height: 25px; width: 25px; position: absolute;}
 #wheelProto {background-color: blue; height: 25px; width: 25px; position: absolute;}
-#car {left: 640px; top: 374px; width: 50px; height: 75px; position: absolute;}
-.car {left: 640px; top: 374px; width: 50px; height: 75px;}
+#car {left: 740px; top: 474px; width: 50px; height: 75px; position: absolute;}
+.car {left: 740px; top: 474px; width: 50px; height: 75px;}
 #sirene {top: 33px; left: 20px; background-color: green; width: 10px; height: 10px; position: absolute;}
 .sirene {left: 20px; top: 33px; background-color: green; height: 10px; width: 10px; position: absolute;}
 #start {left: 0px; top: 1px;}
@@ -18,9 +18,9 @@
 #wheel2 {left: 37px; top: 45px;}
 #wheel3 {left: -10px; top: 46px;}
 #wheel4 {left: 36px; top: 5px;}
-.wheel1 {top: 6px; left: -10px; position: absolute; width: 25px; background-color: blue; height: 25px;}
-.wheel2 {top: 45px; left: 37px; position: absolute; width: 25px; background-color: blue; height: 25px;}
-.wheel3 {top: 46px; left: -10px; position: absolute; width: 25px; background-color: blue; height: 25px;}
-.wheel4 {top: 5px; left: 36px; position: absolute; width: 25px; background-color: blue; height: 25px;}
+.wheel1 {top: 6px; left: -10px; width: 25px; height: 25px; background-color: blue; position: absolute;}
+.wheel2 {top: 45px; left: 37px; width: 25px; height: 25px; background-color: blue; position: absolute;}
+.wheel3 {top: 46px; left: -10px; width: 25px; height: 25px; background-color: blue; position: absolute;}
+.wheel4 {top: 5px; left: 36px; width: 25px; height: 25px; background-color: blue; position: absolute;}
 #x-input {left: 134px; top: -54px;}
 .x-input {left: 134px; top: -54px;}

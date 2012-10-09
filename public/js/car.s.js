@@ -13,7 +13,6 @@ SynerJ('car')._setProp('yDist', 0);
 SynerJ('car')._setProp('running', false);
 SynerJ('car')._setProp('step', 10);
 SynerJ('car')._setProp('drive', 'function goto(x, y) {\n    this.xDist = x;\n    this.yDist = y;\n}');
-SynerJ('car')._setProp('foo', 'bar');
 SynerJ('car')._setProp('prototype', 'object:carProto');
 SynerJ('wheel1')._setProp('prototype', 'object:wheelProto');
 SynerJ('wheel2')._setProp('prototype', 'object:wheelProto');

@@ -22,7 +22,7 @@
 // - obj._id(id)
 // - obj._toString()
 // - obj._equals(obj2)
-// 
+//
 // - obj._clone()
 //
 // - obj._tag()
@@ -32,6 +32,9 @@
 // - obj._getProp(name) or obj._prop(name)
 // - obj._removeProp(name)
 // - obj._forEachProp(fct)
+// - obj._applyToHasPrototype(fct)
+// - obj._chainUp(fct)
+// - obj._getInherits()
 //
 // - obj._attr(name)
 // - obj._attr(name, val)
@@ -40,10 +43,8 @@
 // - obj._before(obj)
 // - obj._after(obj)
 // - obj._parent()
-// - obj._getInherits()
+//
 // - obj._children()
-// - obj._applyToHasPrototype(fct)
-// - obj._chainUp(fct)
 //
 // - obj._bind(event, handler)
 // - obj._unbind(event)
@@ -66,7 +67,7 @@
 // Author: Tim Coppieters
 // Date: September 2011
 
-define(['sConfig'], function (config) {
+define(['sConfig', 'css'], function (config, css) {
 	var Dobject = (function () {
 
     // constructor
@@ -224,8 +225,8 @@ define(['sConfig'], function (config) {
         checkForCycle(this, val);
         var id = val.id();
         // update css accordingly to new prototype
-        addRules(this, this.SynerJ.document);
-        addRules(val, this.SynerJ.document);
+        css.addRules(this, this.SynerJ.document);
+        css.addRules(val, this.SynerJ.document);
         removeInheritCss(this);
         this.jqEl.attr('class', id);
         inheritCss(this, val);
@@ -285,16 +286,96 @@ define(['sConfig'], function (config) {
       return false;
     }
 
-    // isForbiddenAttr: helper that checks if given string
-    // is a forbidden attr name.
-    function isForbiddenAttr(name) {
-      for (var i = 0; i < forbidden_attrs.length; i++) {
-        var fattr = forbidden_attrs[i];
-        if (name === fattr)
-          return true;
+    // applyToHasPrototype: applies given function to all the objects that have
+    // this object in their prototype chain. If the applied function returns false,
+    // the propagation stop going further from that parent.
+    Dobject.prototype._applyToHasPrototype = function(f) {
+      var SynerJ = this.SynerJ;
+      var $ = SynerJ.window.jQuery;
+
+      function applyFunction(obj) {
+        var inherits = obj._getInherits();
+        for (var i = 0; i < inherits.length; i++) {
+          var curr = inherits[i];
+          var cont = f(curr);
+          if (cont)
+            applyFunction(curr);
+        }
       }
-      return false;
+
+      applyFunction(this);
+    };
+    
+    // chainUp: Execute given function on each object in the chain (bottom->top),
+    // until it returns a value
+    Dobject.prototype._chainUp = function chainUp(fct) {
+      var val;
+
+      function searchInChain(obj) {
+          if (!obj)
+            return undefined;
+
+          if (obj && Dobject.instanceOf(obj)) {
+            // if the fct gives a value, return it
+            val = fct(obj);
+            if (isValue(val))
+              return val;
+            
+            // oterwhise, keep on searching up the chain
+            return searchInChain(obj._getProp('prototype'));
+          }
+          // end of chain
+          return undefined;
+      }
+
+      return searchInChain(this);
+    };
+
+    // getInherits: returns all the objects that inherit from this object.
+    Dobject.prototype._getInherits = function getInherits() {
+      var inh = this.SynerJ.window.jQuery('.' + this.id());
+      var arr = [];
+      for (var i = 0; i < inh.length; i++) {
+        arr[i] = this.SynerJ(inh[i]);
+      }
+      return arr;
+    };
+
+    // checkForCycle: checks if setting this prototype makes a cyclic chain.
+    function checkForCycle(obj, proto) {
+      var visited = [];
+      var curr = proto;
+
+      function add(obj) {
+        for(var i=0; i<visited.length; i++) {
+          var o = visited[i];
+          if (obj.equals(o))
+            return false;
+        }
+        visited.push(obj);
+        return true;
+      }
+
+      while (curr && Dobject.instanceOf(curr)) {
+        if (curr._equals(obj))
+          throw new Error("Prototype cycle detected.");
+        curr = curr._prop('prototype');
+      }
     }
+
+    // parseProperty
+    function parseProperty(val, SynerJ) {
+      // if val == "object:<object id>", get the object and assign that
+      // to given name instead of the string.
+      if (typeof val == 'string' && val.indexOf('object:') === 0) {
+        var id = val.slice(7);
+        var obj = SynerJ(id);
+        val = obj ? obj : val;
+      }
+
+      return val;
+    }
+
   
     ////////////////
     // Attributes //
@@ -354,10 +435,21 @@ define(['sConfig'], function (config) {
         obj.jqEl.attr(name, val);
       return obj;
     }
+
+    // isForbiddenAttr: helper that checks if given string
+    // is a forbidden attr name.
+    function isForbiddenAttr(name) {
+      for (var i = 0; i < forbidden_attrs.length; i++) {
+        var fattr = forbidden_attrs[i];
+        if (name === fattr)
+          return true;
+      }
+      return false;
+    }
     
-    ///////////////
-    // Structure //
-    //////////////
+    ////////////////////////
+    // Tree manipulation //
+    //////////////////////
 
 		// append
 		Dobject.prototype._append = function (child) {
@@ -392,60 +484,6 @@ define(['sConfig'], function (config) {
       return this.SynerJ(parent);
     };
 
-    // applyToHasPrototype: applies given function to all the objects that have
-    // this object in their prototype chain. If the applied function returns false,
-    // the propagation stop going further from that parent.
-    Dobject.prototype._applyToHasPrototype = function(f) {
-      var SynerJ = this.SynerJ;
-      var $ = SynerJ.window.jQuery;
-
-      function applyFunction(obj) {
-        var inherits = obj._getInherits();
-        for (var i = 0; i < inherits.length; i++) {
-          var curr = inherits[i];
-          var cont = f(curr);
-          if (cont)
-            applyFunction(curr);
-        }
-      }
-
-      applyFunction(this);
-    };
-    
-    // chainUp: Execute given function on each object in the chain (bottom->top),
-    // until it returns a value
-    Dobject.prototype._chainUp = function chainUp(fct) {
-      var val;
-
-      function searchInChain(obj) {
-          if (!obj)
-            return undefined;
-
-          if (obj && Dobject.instanceOf(obj)) {
-            // if the fct gives a value, return it
-            val = fct(obj);
-            if (isValue(val))
-              return val;
-            
-            // oterwhise, keep on searching up the chain
-            return searchInChain(obj._getProp('prototype'));
-          }
-          // end of chain
-          return undefined;
-      }
-
-      return searchInChain(this);
-    };
-
-    // getInherits: returns all the objects that inherit from this object.
-    Dobject.prototype._getInherits = function getInherits() {
-      var inh = this.SynerJ.window.jQuery('.' + this.id());
-      var arr = [];
-      for (var i = 0; i < inh.length; i++) {
-        arr[i] = this.SynerJ(inh[i]);
-      }
-      return arr;
-    };
 
     ////////////////////////
     // DOM element values //
@@ -602,7 +640,7 @@ define(['sConfig'], function (config) {
       var id = this.id();
       var document = this.SynerJ.document;
       var name = "#" + id;
-      return getStyle(name, document);
+      return css.getStyle(name, document);
     };
 
     // getInheritStyleObject: returns the CSSOM style object that implements the
@@ -611,7 +649,7 @@ define(['sConfig'], function (config) {
       var id = this.id();
       var document = this.SynerJ.document;
       var name = "." + id;
-      return getStyle(name, document);
+      return css.getStyle(name, document);
     };
 
     // updateHandlers: updates the handlers for the new id
@@ -643,10 +681,10 @@ define(['sConfig'], function (config) {
       var oname = "#" + obj.id();
       var nname = "#" + id;
       var doc = obj.SynerJ.document;
-      renameRule(doc, oname, nname);
+      css.renameRule(doc, oname, nname);
       oname = "." + obj.id();
       nname = "." + id;
-      renameRule(doc, oname, nname);
+      css.renameRule(doc, oname, nname);
     }
     
     // propagateCss: updates the objects that have this object as prototype.
@@ -667,124 +705,9 @@ define(['sConfig'], function (config) {
       });
     }
 
-    // checkForCycle: checks if setting this prototype makes a cyclic chain.
-    function checkForCycle(obj, proto) {
-      var visited = [];
-      var curr = proto;
-
-      function add(obj) {
-        for(var i=0; i<visited.length; i++) {
-          var o = visited[i];
-          if (obj.equals(o))
-            return false;
-        }
-        visited.push(obj);
-        return true;
-      }
-
-      while (curr && Dobject.instanceOf(curr)) {
-        if (curr._equals(obj))
-          throw new Error("Prototype cycle detected.");
-        curr = curr._prop('prototype');
-      }
-    }
-
-    // parseProperty
-    function parseProperty(val, SynerJ) {
-      // if val == "object:<object id>", get the object and assign that
-      // to given name instead of the string.
-      if (typeof val == 'string' && val.indexOf('object:') === 0) {
-        var id = val.slice(7);
-        var obj = SynerJ(id);
-        val = obj ? obj : val;
-      }
-
-      return val;
-    }
-
     function isValue(val) {
       return (typeof val != 'undefined' && !(typeof val === 'string' && val === ''));
     }
-    
-    //
-    // CSSOM helpers
-    //
-    
-    // findRule
-		function findRule(document, name) {
-			// some browsers don't support upperCase in selectorTexts.
-      var sheet = document.styleSheets[1];
-      var rules = sheet.cssRules;
-			var lowrName = name.toLowerCase();
-			for (var i = 0; i<rules.length; i++) {
-				if (rules[i].selectorText.toLowerCase() == lowrName)
-					return rules[i];
-			}
-			return undefined;
-		}
-    
-    // renameRule
-    function renameRule(document, oname, nname) {
-      var newName = nname.toLowerCase();
-      var oldName = oname.toLowerCase();
-      var sheet = document.styleSheets[1];
-      var rules = sheet.cssRules;
-			for (var i = 0; i<rules.length; i++) {
-        console.log(rules[i].cssText);
-        if (rules[i].selectorText.toLowerCase() == oldName) {
-          var style = rules[i].style;
-          var rule = nname;
-          if (style.cssText)
-            rule += " { " + style.cssText + " } ";
-          else
-            rule += " { } ";
-          sheet.deleteRule ? sheet.deleteRule(i) : sheet.removeRule(i);
-          sheet.insertRule ? sheet.insertRule(rule, rules.length) : sheet.addRule(rule, rules.length);
-        }
-      }
-    }
-      
-    // findStyle
-		function findStyle(document, name) {
-      var rule = findRule(document, name);
-      if (rule)
-        return rule.style;
-      return undefined;
-    }
-
-    // serializeSelector: certain browsers only accept score-separated
-    // selectors, others camelCase.
-    function serializeSelector(selector, window) {
-      /* server-side code */
-      if (!window.navigator)
-        return selector;
-      /* firefox */
-      if (navigator.userAgent.match(/mozilla/gi)) {
-        var els = selector.split('-');
-        for (var i=1; i<els.length; i++) {
-          var str = els[i];
-          els[i] = str.charAt(0).toUpperCase() + str.slice(1);
-        }
-        return els.join('');
-      }
-      /* others */
-      return selector;
-    }
-
-		// getStyle: Gets the style object with given name
-    function getStyle(name, document) {
-			// convention is that the id's sheet is at 1
-			var sheet = document.styleSheets[1];
-			var rules = sheet.cssRules;
-			var rule = name + "{}";
-      var style = findStyle(document, name);
-			// if the style already exists, just return it
-			if (style)
-				return style;
-			// otherwise add a rule which includes the style.
-      addRule(sheet, rule);
-      return findStyle(document, name);
-		}
 
     // removeInheritCss: Remove the style inherited through the prototype.
     function removeInheritCss(obj) {
@@ -810,33 +733,6 @@ define(['sConfig'], function (config) {
             // nothing has to be done.
           }
         }
-    }
-
-    // addRules
-    function addRules(obj, document) {
-      var id = obj._id();
-      var sheet = document.styleSheets[1];
-      var style = findStyle(document, "#" + id);
-      var rule = "#" + id +"{}";
-      if (!style) {
-        addRule(sheet, rule);
-      }
-      style = findStyle(document, "." + id);
-      rule = "." + id +"{}";
-      if (!style) {
-        addRule(sheet, rule);
-      }
-    }
-
-    // addRule
-    function addRule(sheet, rule) {
-      var rules = sheet.cssRules;
-      if (sheet.insertRule)
-        sheet.insertRule(rule, rules.length);
-      else if (sheet.addRule)
-        sheet.addRule(rule, rules.length);
-      else
-        throw new Error("Browser doesn't support adding rules");
     }
 
     return Dobject;
