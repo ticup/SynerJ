@@ -67,7 +67,7 @@
 // Author: Tim Coppieters
 // Date: September 2011
 
-define(['sConfig', 'css'], function (config, css) {
+define(['shared/config', 'shared/css'], function (config, css) {
 	var Dobject = (function () {
 
     // constructor

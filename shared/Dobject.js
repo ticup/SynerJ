@@ -54,7 +54,7 @@
 // Author: Tim coppieters
 // Date: September 2011
 
-define(['sDobject.core'], function (Dobject) {
+define(['shared/Dobject.core'], function (Dobject) {
   
   // id
   Dobject.prototype.id = function (id, callback) {

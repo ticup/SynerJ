@@ -12,7 +12,7 @@
 // Author: Tim Coppieters
 // Date: september 2011
 
-define(["sSynerJ", "Mode", "jquery", "config"],
+define(["shared/SynerJ", "Mode", "jquery", "config"],
   function (sSynerJ, mode, $, config) {
   
   var SynerJ = (function () {

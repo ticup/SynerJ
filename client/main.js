@@ -11,11 +11,11 @@ require.config({
     order: 'libs/requirejs/order',
     text: 'libs/requirejs/text',
   // shared env code
-    sDobject: '../shared/Dobject',
-    'sDobject.core': '../shared/Dobject.core',
-    sSynerJ: '../shared/SynerJ',
-    'sSynerJ.core': '../shared/SynerJ.core',
-    sEventHandlers: '../shared/eventHandlers',
+    'shared/Dobject': '../shared/Dobject',
+    'shared/Dobject.core': '../shared/Dobject.core',
+    'shared/SynerJ': '../shared/SynerJ',
+    'shared/SynerJ.core': '../shared/SynerJ.core',
+    'shared/eventHandlers': '../shared/eventHandlers',
   // client env code
     Dobject : '../client/env/Dobject',
     'Dobject.core' : '../client/env/Dobject.core',
@@ -24,8 +24,8 @@ require.config({
     eventHandlers: '../client/env/eventHandlers',
     sox: '../client/env/sox',
   // misc
-    css: '../shared/css',
-    sConfig: '../shared/config',
+    'shared/css': '../shared/css',
+    'shared/config': '../shared/config',
     config: '../client/config'
 	},
   baseUrl: window.location.protocol + "//" + window.location.host + window.location.pathname.split("/").slice(0, -1).join("/") + "/public"

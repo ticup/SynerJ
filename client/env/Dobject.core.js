@@ -1,4 +1,4 @@
-define(['sDobject'], function (Dobject) {
+define(['shared/Dobject'], function (Dobject) {
 
   // setProp: if the new property is a new prototype, then set up the prototype chain
   // to listen to the correct events (according to the new prototype).

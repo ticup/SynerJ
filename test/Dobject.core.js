@@ -2,32 +2,16 @@ var define = require('requirejs');
 var should = require('should');
 
 define.config({
-	baseUrl: 'lib',
+	baseUrl: __dirname + '/../',
+	//nodeRequire: require,
 	paths: {
-		// shared env code
-		sDobject: '../shared/Dobject',
-		'sDobject.core': '../shared/Dobject.core',
-		sSynerJ: '../shared/SynerJ',
-		'sSynerJ.core': '../shared/SynerJ.core',
-		sConfig: '../shared/config',
-		sEventHandlers: '../shared/eventHandlers',
-		// server env code
-		Dobject: 'env/Dobject',
-		'Dobject.core': 'env/Dobject.core',
-		SynerJ: 'env/SynerJ',
-		'SynerJ.core': 'env/SynerJ.core',
-		eventHandlers: 'env/eventHandlers',
-		// server managing/servering code
-		pages: 'server/pages',
-		scripts: 'server/scripts',
-		Page: 'server/Page',
-		sox: 'server/sox',
-		Sockets: 'server/Sockets',
-		css: '../shared/css',
-	}
+		Dobject: 'lib/env/Dobject',
+    SynerJ: 'lib/env/SynerJ',
+    eventHandlers: 'lib/env/eventHandlers'
+  }
 });
 
-define(['Page'], function (Page) {
+define(['lib/server/Page'], function (Page) {
 	new Page('test', function tests(page) {
 		var window = page.window;
 		var document = page.document;

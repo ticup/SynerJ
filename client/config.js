@@ -1,4 +1,4 @@
-define(['sConfig'], function (config) {
+define(['shared/config'], function (config) {
   // all possible DOM Object types
   config.DOMtypes = ['a', 'abbr', 'address', 'area', 'article', 'aside', 'audio',
                    'b', 'base', 'bdi', 'bdo', 'blockquote', 'body', 'br', 'button',

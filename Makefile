@@ -11,6 +11,7 @@ test:
 ci-test:
 	/usr/local/bin/nodemon \
 		./node_modules/.bin/mocha \
-			--reporter spec
+			--reporter spec \
+			-c
 			
 .PHONY: test

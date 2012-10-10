@@ -7,7 +7,7 @@
 // Author: Tim Coppieters
 // Date: September 2012
 
-define(['sEventHandlers', 'SynerJ'], function (eventHandlers, SynerJ) {
+define(['shared/eventHandlers', 'SynerJ'], function (eventHandlers, SynerJ) {
 
   // addEventHandlers: adds the shared and client eventHandlers to the socket.
 	eventHandlers.addEventHandlers = function (socket) {

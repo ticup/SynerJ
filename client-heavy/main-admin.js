@@ -30,15 +30,16 @@ require.config({
     customEditor: '../client/interface/customEditor',
   // misc
     sConfig: '../shared/config',
-    config: '../client/config',
+    config: '../client/config'
 	},
+  priority: ['jquery'],
   baseUrl: window.location.protocol + "//" + window.location.host + "/public"
 
 });
 var propsLink = "public/js/" + window.location.pathname.slice(1).split(".")[0] + ".js";
 require(["jquery", "SynerJ", "Inspector",
          "Editor", "Evaluator", "Menu", "require", propsLink
-         ], 
+         ],
 	function($, SynerJ, Inspector, Editor, Evaluator, Menu, require) {
 
   SynerJ.Editor = new Editor();

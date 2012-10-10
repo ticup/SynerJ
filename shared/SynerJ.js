@@ -8,7 +8,7 @@
 // Author: Tim Coppieters
 // Date: September 2011
 
-define(['sSynerJ.core', 'Dobject'], function (SynerJ, Dobject) {
+define(['shared/SynerJ.core', 'Dobject'], function (SynerJ, Dobject) {
       
   // sync
   SynerJ.prototype.sync = function () {

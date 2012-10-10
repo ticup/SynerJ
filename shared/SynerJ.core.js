@@ -22,7 +22,7 @@
 // Author: Tim Coppieters
 // Date: September 2011
 
-define(['Dobject', 'sConfig'], function(Dobject, cfg) {
+define(['Dobject', 'shared/config'], function(Dobject, cfg) {
 	var SynerJ = (function() {
 
 		// constructor
