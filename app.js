@@ -25,14 +25,11 @@ function mainHandler(req, res) {
   var thePath = url.parse(req.url).pathname;
 	// static handling
   req.addListener('end', function () {
-    if (thePath.match(/public/i)) {
+    // static file request (html, css, js and library files)
+    if (thePath.match(/public/i) || thePath.match(/client|shared/i)) {
       file.serve(req, res);
     }
-    // a script is requested
-    else if (thePath.match(/client|shared/i)) {
-      return scripts.serveScript(thePath, req, res);
-    }
-    // a page is requested
+    // a page is request
     else {
       return pages.servePage(thePath, req, res);
     }
