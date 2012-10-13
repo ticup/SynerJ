@@ -10,7 +10,6 @@ define([], function () {
     var sheet = document.styleSheets[1];
     var rules = sheet.cssRules;
 		for (var i = 0; i<rules.length; i++) {
-      console.log(rules[i].cssText);
       if (rules[i].selectorText.toLowerCase() == oldName) {
         var style = rules[i].style;
         var rule = nname;

@@ -1,3 +1,13 @@
+// client/env/Dobject.core
+//
+// Extends the core methods from shared/Dobject.core with client-specific operations.
+//
+// Dobject module loading and extending until here:
+// shared/Dobject.core -> shared/Dobject -> here
+//
+// Author: Tim Coppieters
+// Date: September 2011
+
 define(['shared/Dobject'], function (Dobject) {
 
   // setProp: if the new property is a new prototype, then set up the prototype chain

@@ -74,7 +74,7 @@ define(['shared/config', 'shared/css'], function (config, css) {
 		function Dobject(jqEl, SynerJ, jQuery) {
       if (!jqEl || !jqEl.length || jqEl.length !== 1)
         throw new Error("new Dobject: must supply a jqEl of length 1" );
-      if (!SynerJ || !SynerJ.create)
+      if (!SynerJ || !SynerJ._create)
         throw new Error("new Dobject: must supply a valid SynerJ object");
 
 			this.jqEl = jqEl;

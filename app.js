@@ -38,8 +38,7 @@ function mainHandler(req, res) {
     }
   });
 }
-    
 
-// initliaze the sockets on the app
+// initliaze the sockets on the http server
 sox.init(app, pages);
 });

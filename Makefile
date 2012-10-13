@@ -7,11 +7,15 @@ install:
 test:
 	./node_modules/.bin/mocha \
   	--reporter spec
+		-c \
+		test/api \
+		test/integration
 
 ci-test:
 	/usr/local/bin/nodemon \
 		./node_modules/.bin/mocha \
 			--reporter spec \
-			-c
+			-c \
+			test/api \
 			
-.PHONY: test
+.PHONY: install

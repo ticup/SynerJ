@@ -2,8 +2,8 @@ var define = require('requirejs');
 var should = require('should');
 
 define.config({
-	baseUrl: __dirname + '/../',
-	//nodeRequire: require,
+	baseUrl: __dirname + '/../../',
+	nodeRequire: require,
 	paths: {
     // code called by shared code
     Dobject: 'lib/env/Dobject',

@@ -4,10 +4,10 @@
 // These methods are used by the user (either executed directly on the server or on the client)
 // and make sure that the core methods are executed on both server and all connected clients.
 //
-// The main method used is SynerJ.sync, which should be implemented both on the server as 
+// The main method used is SynerJ.sync, which should be implemented both on the server as
 // on the client version of the SynerJ object.
 //
-// API: 
+// API:
 // - Dobject.instanceOf(obj)
 //
 // - obj.id(id)

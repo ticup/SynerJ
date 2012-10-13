@@ -58,10 +58,13 @@ define(['Dobject', 'shared/config'], function(Dobject, cfg) {
     // create
     SynerJ.prototype._create = function (config) {
       // a normal object = hidden div
+      if (!config)
+        config = {};
       if (!config.type || config.type == 'none') {
         config.type = 'div';
         config.hidden = 'true';
       }
+
       // create DOM element
       var $ = this.window.jQuery;
       var domEl = this.document.createElement(config.type);
@@ -69,16 +72,17 @@ define(['Dobject', 'shared/config'], function(Dobject, cfg) {
       jqEl.attr('id', config.id);
       if (config.hidden)
         jqEl.hide();
-      var dobj = this.get(jqEl);
+      var dobj = this._get(jqEl);
+
       // insert into tree
       var parent = config.parent;
       if (!parent) {
         config.parentId = config.parentId ||
           ( config.hidden ? cfg.normalObjectsParent : cfg.dobjectsParent );
-        parent = this.get(config.parentId);
+        parent = this._get(config.parentId);
       }
       if (!Dobject.instanceOf(parent))
-        throw "Given parent is not valid config.parentId: " + config.parentId + "; parent: " + config.parent;
+        throw "Given parent is not valid config.parentId: " + config.parentId + "; parent: " + parent;
       parent._append(dobj);
       return dobj;
     };
