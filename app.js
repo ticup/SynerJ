@@ -10,8 +10,8 @@ define.config({
   }
 });
 
-define(['http', 'lib/server/sox', 'url', 'lib/server/pages', 'lib/server/scripts', 'node-static', 'lib/config'],
-		function (http, sox, url, pages, scripts, static, config) {
+define(['http', 'lib/server/sox', 'url', 'lib/server/pages', 'node-static', 'lib/config'],
+		function (http, sox, url, pages, static, config) {
 
 // the http server
 var app = http.createServer(mainHandler);
@@ -29,7 +29,7 @@ function mainHandler(req, res) {
     if (thePath.match(/public/i) || thePath.match(/client|shared/i)) {
       file.serve(req, res);
     }
-    // a page is request
+    // page request
     else {
       return pages.servePage(thePath, req, res);
     }

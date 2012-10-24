@@ -1,3 +1,4 @@
 # excludes folders for nodemon (used for ci testing)
 
 /public/*
+/test/testfiles*	# used for tests to write files in
