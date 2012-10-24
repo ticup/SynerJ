@@ -223,21 +223,20 @@ define(['config',
 
     // deleteNode
     Inspector.prototype.deleteNode = function (id) {
-      this.jst.jstree("remove", "#sJstree-" + id);
+      this.jst.jstree("remove", $("#sJstree-" + id));
     };
 
     // beforeNode
     Inspector.prototype.beforeNode = function (rId, lId) {
-      this.jst.jstree("move_node", "#sJstree-" + lId, "#sJstree-" + rId, "before");
+      this.jst.jstree("move_node", $("#sJstree-" + lId), $("#sJstree-" + rId), "before");
     };
 
     // appendNode
     Inspector.prototype.appendNode = function (parentId, childId) {
       // special case: parent = root
       if (parentId == 'Dobjects') 
-        this.jst.jstree("move_node", "#sJstree-" + childId, -1, "last");
-      else
-        this.jst.jstree("move_node", "#sJstree-" + childId, "#sJstree-" + parentId);
+        return this.jst.jstree("move_node", $("#sJstree-" + childId), -1, "last");
+      return this.jst.jstree("move_node", $("#sJstree-" + childId), $("#sJstree-" + parentId));
     };
     
     // renameNode

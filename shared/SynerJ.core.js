@@ -63,7 +63,7 @@ define(['Dobject', 'shared/config'], function(Dobject, cfg) {
       if (!config.type || config.type == 'none') {
         config.type = 'div';
         config.hidden = 'true';
-      }      
+      }
 
       // create DOM element
       var $ = this.window.jQuery;

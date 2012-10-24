@@ -117,7 +117,7 @@ define(['shared/eventHandlers', 'SynerJ'], function (eventHandlers, SynerJ) {
   eventHandlers.addAfterSharedEvent('append', function (data, SynerJ) {
     if (SynerJ.Editor)
       // append can possibly erase the html attribute, so refresh editor
-      SynerJ.Editor.refresh();
+      SynerJ.Editor.refresh();      
     if (SynerJ.Inspector)
       SynerJ.Inspector.appendNode(data.id, data.childId);
   });
