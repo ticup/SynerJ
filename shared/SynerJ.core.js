@@ -63,16 +63,19 @@ define(['Dobject', 'shared/config'], function(Dobject, cfg) {
       if (!config.type || config.type == 'none') {
         config.type = 'div';
         config.hidden = 'true';
-      }
+      }      
 
       // create DOM element
       var $ = this.window.jQuery;
       var domEl = this.document.createElement(config.type);
       var jqEl = $(domEl);
-      jqEl.attr('id', config.id);
       if (config.hidden)
         jqEl.hide();
       var dobj = this._get(jqEl);
+
+      // set id if given
+      if (config.id)
+        dobj._id(config.id);
 
       // insert into tree
       var parent = config.parent;
