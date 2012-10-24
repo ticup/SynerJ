@@ -185,7 +185,7 @@ define(['config',
         rename.bind('click', function (e) {
           var id = self.getSelectedId();
           if (id)
-            self.jst.jstree("rename", '#sJstree-' + id);
+            self.jst.jstree("rename", $('#sJstree-' + id));
           e.preventDefault();
         });
         // Delete button

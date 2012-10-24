@@ -1,4 +1,8 @@
 require.config({
+  shim: {
+    slickGrid: ['jquery'],
+    jqueryui: ['jquery']
+  },
 	paths: {
   // libraries
 		jquery: 'libs/jquery/jquery-require',
